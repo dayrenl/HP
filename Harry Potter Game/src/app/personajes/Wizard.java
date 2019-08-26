@@ -7,6 +7,8 @@ import app.poder.Poder;
 import app.artefacto.Artefacto;
 import app.interfaces.IHacerMagia;
 
+
+
 public class Wizard extends Personaje implements IHacerMagia {
 
     public int energiaMagica;
@@ -43,6 +45,7 @@ public class Wizard extends Personaje implements IHacerMagia {
     public void aprenderHechizo(Hechizo hechizo) {
 
     }
+
     
     
     
