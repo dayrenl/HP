@@ -5,5 +5,7 @@ package app.interfaces;
  */
 public interface IEsMagico {
 
-    public void esInvisibleAMuggles();
+    public boolean esInvisibleAMuggles();
+
+    public boolean esInvisible(); 
 }
