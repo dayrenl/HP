@@ -2,6 +2,6 @@ package app;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Welcome to HP");
+        System.out.println("Bienvenidxs al Campeonato de Magia y Hechiceria");
     }
 }
