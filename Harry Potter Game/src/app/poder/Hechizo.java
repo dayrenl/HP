@@ -22,7 +22,7 @@ public class Hechizo extends Poder {
     }
     
     public void invocaHechizo (String nombreDeHechizo){
-        System.out.println(this.nombreWiz + " : " + nombreDeHechizo);
+        System.out.println(this.nombre + " : " + nombreDeHechizo); //nombrewiz: falta crear contenders
     }
 
 
@@ -32,6 +32,11 @@ public class Hechizo extends Poder {
                 return hech;
         }
         return null;
+    }
+
+    public boolean esOscuro()
+    {
+        return this.esOscuro;
     }
 
     public static void IniciarHechizo(){
