@@ -9,7 +9,7 @@ public class PiedraResurreccion extends Artefacto implements IReliquiaDeLaMuerte
 
     @Override
     public boolean esReliquiaMuerte() {
-        return true;
+        return false;
     }
 
     

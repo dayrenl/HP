@@ -4,9 +4,10 @@ package app.personajes;
  */
 public class Personaje {
 
-    public String nombre;
+    public String nombreDeMago;
     public boolean estaVivo = true;
     public int salud = 100;
     public int edad;
+    
     
 }

@@ -3,6 +3,8 @@ package app.poder;
 import java.util.List;
 import java.util.ArrayList;
 
+
+
 /**
  * Hechizo
  */
@@ -21,10 +23,7 @@ public class Hechizo extends Poder {
 
     }
     
-    public void invocaHechizo (String nombreDeHechizo){
-        System.out.println(this.nombre + " : " + nombreDeHechizo); //nombrewiz: falta crear contenders
-    }
-
+   
 
     public static Hechizo getHechizos(String nombreDeHechizo) {
         for(Hechizo hech : Hechizo.hechizos) {
