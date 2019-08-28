@@ -4,6 +4,8 @@ package app.personajes;
  * Criatura
  */
 public class Criatura  extends Personaje{
-    String nombre;
+    String nombreDeCriatura;
+
+    
     
 }

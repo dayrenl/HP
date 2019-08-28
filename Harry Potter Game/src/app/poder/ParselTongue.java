@@ -3,7 +3,7 @@ package app.poder;
 /**
  * ParcelTongue
  */
-public class ParcelTongue {
+public class ParselTongue {
 
     
 }

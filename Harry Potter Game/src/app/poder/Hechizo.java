@@ -1,99 +1,114 @@
 package app.poder;
 
-import java.util.List;
 import java.util.ArrayList;
-
-
+import java.util.List;
 
 /**
- * Hechizo
+ * Hechizzo
  */
-public class Hechizo extends Poder {
+public class Hechizo {
 
     public int nroDeHechizo;
     public String nombreDeHechizo;
 
-    public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public boolean esOscuro;
 
-    public Hechizo (String nombreDeHechizo, int nroDeHechizo){
-        this.nombreDeHechizo = nombreDeHechizo;
+    public int nivelDanio;
+    public int nivelCuracion;
+    public int nivelEnergia;
+
+    public static List<Hechizo> hechizos = new ArrayList<>();
+
+    public Hechizo (int nroDeHechizo, String nombreDeHechizo, boolean esOscuro, int nivelDanio, int nivelCuracion, int nivelEnergia){
         this.nroDeHechizo = nroDeHechizo;
+        this.nombreDeHechizo = nombreDeHechizo;
+        this.esOscuro = esOscuro;
+        this.nivelDanio = nivelDanio;
+        this.nivelCuracion = nivelCuracion;
+        this.nivelEnergia = nivelEnergia;
     }
+
     public Hechizo(){
 
     }
-    
-   
 
-    public static Hechizo getHechizos(String nombreDeHechizo) {
+    public static void aprenderHechizo(){
+        Hechizo.agregarHechizo();
+    }
+
+    public static List<Hechizo> agregarHechizo() {
+
+        Hechizo hech = new Hechizo();
+        hech.nombreDeHechizo = "Sectum Sempra";
+        hech.nroDeHechizo = 1;
+        hech.esOscuro = true;
+        hech.nivelCuracion = 35;
+        hech.nivelDanio = 100;
+        hechizos.add(hech);
+
+        hech = new Hechizo();
+        hech.nombreDeHechizo = "Vulnera Sanentur";
+        hech.nroDeHechizo = 2;
+        hech.esOscuro = false;
+        hech.nivelCuracion = 100;
+        hech.nivelDanio = 100;
+        hechizos.add(hech);
+
+        hech = new Hechizo();
+        hech.nombreDeHechizo = "Wingardium Leviosa";
+        hech.nroDeHechizo = 3;
+        hech.esOscuro = false;
+        hech.nivelCuracion = 0;
+        hech.nivelDanio = 50;
+        hechizos.add(hech);
+
+        hech = new Hechizo();
+        hech.nombreDeHechizo = "Cave Inimicum";
+        hech.nroDeHechizo = 4;
+        hech.esOscuro = false;
+        hech.nivelCuracion = 0;
+        hech.nivelDanio = 0;
+        hechizos.add(hech);
+
+        hech = new Hechizo();
+        hech.nombreDeHechizo = "Avada Kedavra";
+        hech.nroDeHechizo = 5;
+        hech.esOscuro = true;
+        hech.nivelCuracion = 0;
+        hech.nivelDanio = 100;
+        hechizos.add(hech);
+
+        hech = new Hechizo();
+        hech.nombreDeHechizo = "Crucio";
+        hech.nroDeHechizo = 6;
+        hech.esOscuro = true;
+        hech.nivelCuracion = 0;
+        hech.nivelDanio = 100;
+        hechizos.add(hech);
+
+        return hechizos;
+
+
+    }
+    public static Hechizo selecHechizos(String nombreDeHechizo) {
         for(Hechizo hech : Hechizo.hechizos) {
             if (hech.nombreDeHechizo.equals(nombreDeHechizo))
                 return hech;
         }
         return null;
     }
-
-    public boolean esOscuro()
-    {
-        return this.esOscuro;
+    /**
+     * public static Hechizzo selecHechizos(int nroHechizo) {
+        for(Hechizzo hech : Hechizzo.hechizos) {
+            if (hech.nroHechizo == nroHechizo)
+                return hech;
+        }
+        return null;
     }
-
-    public static void IniciarHechizo(){
-        Hechizo.agregarHechizo();
-    }
-
-    public static void agregarHechizo() {
-
-        Hechizo hech1 = new Hechizo();
-        hech1.nombreDeHechizo = "Sectum Sempra"; // hechizo oscuro, produce cortaditas
-        hech1.nroDeHechizo = 1;
-        hech1.esOscuro = true;
-        hech1.nivelCuracion = 35;
-        hech1.nivelDanio = 70;
-        hechizos.add(hech1);
-
-        Hechizo hech2 = new Hechizo();
-        hech2.nombreDeHechizo = "Vulnera Sanentur"; // cura el hechizo sectum sempra
-        hech2.nroDeHechizo = 2;
-        hech2.esOscuro = false;
-        hech2.nivelCuracion = 100;
-        hech2.nivelDanio = 0;
-        hechizos.add(hech2);
-
-        Hechizo hech3 = new Hechizo();
-        hech3.nombreDeHechizo = "Wingardium Leviosa"; // hace levitar cosas
-        hech3.nroDeHechizo = 3;
-        hech3.esOscuro = false;
-        hech3.nivelCuracion = 0;
-        hech3.nivelDanio = 60;
-        hechizos.add(hech3);
-
-        Hechizo hech4 = new Hechizo();
-        hech4.nombreDeHechizo = "Cave Inimicum"; // mantiene a los enemigos alejados
-        hech4.nroDeHechizo = 4;
-        hech4.esOscuro = false;
-        hech4.nivelCuracion = 0;
-        hech4.nivelDanio = 0;
-        hechizos.add(hech4);
-
-        Hechizo hech5 = new Hechizo();
-        hech5.nombreDeHechizo = "Avada Kedavra"; // mata de una
-        hech5.nroDeHechizo = 5;
-        hech5.esOscuro = true;
-        hech5.nivelCuracion = 0;
-        hech5.nivelDanio = 100;
-        hechizos.add(hech5);
-
-        Hechizo hech6 = new Hechizo();
-        hech6.nombreDeHechizo = "Crucio"; // hechizo de tortura
-        hech6.nroDeHechizo = 5;
-        hech6.esOscuro = true;
-        hech6.nivelCuracion = 0;
-        hech6.nivelDanio = 100;
-        hechizos.add(hech6);
+     */
 
 
-    }
 
-    
+
+
 }

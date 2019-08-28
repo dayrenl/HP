@@ -3,9 +3,9 @@ package app.artefacto;
 import app.interfaces.IReliquiaDeLaMuerte;
 
 /**
- * PiedraResurreccion
+ * Horocrux
  */
-public class PiedraResurreccion extends Artefacto implements IReliquiaDeLaMuerte{
+public class Horrocrux extends Artefacto implements IReliquiaDeLaMuerte{
 
     
 
@@ -14,12 +14,11 @@ public class PiedraResurreccion extends Artefacto implements IReliquiaDeLaMuerte
         return false;
     }
 
-    public PiedraResurreccion(int amplificadorDanio, int amplificadorDeSalud, String nombreArtefacto) {
+    public Horrocrux(int amplificadorDanio, int amplificadorDeSalud, String nombreArtefacto) {
         super(amplificadorDanio, amplificadorDeSalud, nombreArtefacto);
     }
 
-    public PiedraResurreccion() {
+    public Horrocrux() {
     }
 
-    
 }

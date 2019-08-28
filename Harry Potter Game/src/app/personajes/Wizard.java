@@ -4,101 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 import app.poder.Hechizo;
 import app.poder.Poder;
+import app.transporte.Escoba;
 import app.artefacto.Artefacto;
 import app.interfaces.IHacerMagia;
-
-
+import app.personajes.Personaje;
 
 public class Wizard extends Personaje implements IHacerMagia {
 
+    public Escoba escoba;
+    public Poder poderInicial;
+    public boolean magoOscuro = false;
     public int energiaMagica;
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
 
-    
+    public static List<Wizard> magos = new ArrayList<Wizard>();
 
-    public static List <Wizard> Wiz(){
-        List<Wizard> wiz = new ArrayList<Wizard>();
-    
-        Wizard wiz1 = new Wizard();
-        wiz1.nombreDeMago = "Harry 'ElPibeQueSobrevivio' Potter";
-        wiz1.edad = 17;
-        wiz1.salud = 100;
-        wiz1.estaVivo = true;
-        wiz.add(wiz1);
+    public Wizard(boolean magoOscuro, int energiaMagica, String nombreDeMago) {
+        this.magoOscuro = magoOscuro;
+        this.energiaMagica = energiaMagica;
+        this.nombreDeMago = nombreDeMago;
+    }
 
-        Wizard wiz2 = new Wizard();
-        wiz2.nombreDeMago = "Hermione 'AbajoElPatriarcadoQueVaACaer' Granger";
-        wiz2.edad = 17;
-        wiz2.salud = 100;
-        wiz2.estaVivo = true;
-        wiz.add(wiz2);
+    public Wizard() {
 
-        Wizard wiz3 = new Wizard();
-        wiz3.nombreDeMago = "Draco 'Todxs Sangre Sucia' Malfoy";
-        wiz3.edad = 17;
-        wiz3.salud = 100;
-        wiz3.estaVivo = true;
-        wiz.add(wiz3);
-
-        Wizard wiz4 = new Wizard();
-        wiz4.nombreDeMago = "Severus 'Always :'(' Snape ";
-        wiz4.edad = 45;
-        wiz4.salud = 100;
-        wiz4.estaVivo = true;
-        wiz.add(wiz4);
-
-
-        Wizard wiz5 = new Wizard();
-        wiz5.nombreDeMago = "Minerva 'Vieji Copada' McGonagall";
-        wiz5.edad = 70;
-        wiz5.salud = 100;
-        wiz5.estaVivo = true;
-        wiz.add(wiz5);
-
-
-        Wizard wiz6 = new Wizard();
-        wiz6.nombreDeMago = "Dolores 'No Pun Intended' Umbridge";
-        wiz6.edad = 55;
-        wiz6.salud = 100;
-        wiz6.estaVivo = true;
-        wiz.add(wiz6);
-
-
-        Wizard wiz7 = new Wizard();
-        wiz7.nombreDeMago = "Albus Dumbledore";
-        wiz7.edad = 75;
-        wiz7.salud = 100;
-        wiz7.estaVivo = true;
-        wiz.add(wiz7);
-
-
-        Wizard wiz8 = new Wizard();
-        wiz8.nombreDeMago = "Bellatrix Lestrange";
-        wiz8.edad = 45;
-        wiz8.salud = 100;
-        wiz8.estaVivo = true;
-        wiz.add(wiz8);
-
-
-        Wizard wiz9 = new Wizard();
-        wiz9.nombreDeMago = "Ron 'El colo' Weasley";
-        wiz9.edad = 17;
-        wiz9.salud = 100;
-        wiz9.estaVivo = true;
-        wiz.add(wiz9);
-
-
-
-        return wiz;
-
-
-    
     }
 
     
-
 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
@@ -130,7 +63,4 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     }
 
-    
-    
-    
 }
