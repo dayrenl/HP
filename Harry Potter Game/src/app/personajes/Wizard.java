@@ -12,13 +12,14 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     public Wizard(String nombre, boolean estaVivo, int salud, int edad) {
         super(nombre, estaVivo, salud, edad);
+
     }
 
-    public Wizard(String nombre, boolean estaVivo, int salud, int edad) {
-	}
+    
 
 	public List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
+	public Artefacto Artefacto;
 
     public static List<Wizard> magos = new ArrayList<Wizard>();
 
@@ -54,5 +55,9 @@ public class Wizard extends Personaje implements IHacerMagia {
     public void aprenderHechizo(Hechizo hechizo) {
 
     }
+
+	public List<Hechizo> add(Wizard mago) {
+		return null;
+	}
 
 }

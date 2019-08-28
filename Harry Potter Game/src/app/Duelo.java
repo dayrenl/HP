@@ -8,6 +8,7 @@ import app.personajes.Elfo;
 import app.personajes.Muggle;
 import app.personajes.Personaje;
 import app.personajes.Wizard;
+import app.poder.Hechizo;
 import app.poder.Poder;
 
 /**
@@ -18,7 +19,7 @@ public class Duelo {
     public static List<Personaje> catalogo = new ArrayList<Personaje>();
 
     public static List<Artefacto> artefactos = new ArrayList<>();
-
+/**
     public static List<Artefacto> listArtefac() {
 
         Artefacto artef = new Artefacto();
@@ -105,29 +106,21 @@ public class Duelo {
     public static List<Wizard> ListMago() {
 
         Wizard mago = new Wizard("Harry Potter", true, 100, 17);
-        magos.add(mago);
+        mago.Artefacto = new Artefacto(2, 2, "Capa de Invisibilidad");
+        mago.hechizos = new Hechizo(1, "Sectum Sempra", true, nivelDanio, nivelCuracion, nivelEnergia)
+        mago.add(mago);
 
         Wizard mago1 = new Wizard("Hermione Granger", true, 100, 17);
-        mag = new Wizard();
-        mag.nombreDeMago = "Hermione Granger";
-        mag.edad = 17;
-        mag.magoOscuro = false;
-        magos.add(mag);
+        magos.add(mago1);
 
-        mag = new Wizard();
-        mag.nombreDeMago = "Ron Weasley";
-        mag.edad = 17;
-        magos.add(mag);
+        Wizard mago2 = new Wizard("Ron Weasley", true, 70, 17);
+        mago.add(mago2);
 
-        mag = new Wizard();
-        mag.nombreDeMago = "Draco Malfoy";
-        mag.edad = 17;
-        magos.add(mag);
+        Wizard mago3 = new Wizard("Draco Malfoy", true, 100, 17);
+        mago.add(mago3);
 
-        mag = new Wizard();
-        mag.nombreDeMago = "Severus Snape";
-        mag.edad = 45;
-        magos.add(mag);
+        Wizard mago4 = new Wizard("Severus Snape", true, 100, 45);
+        magos.add(mago4);
 
         mag = new Wizard();
         mag.nombreDeMago = "Dolores Umbridge";
