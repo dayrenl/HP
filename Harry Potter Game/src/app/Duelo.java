@@ -102,16 +102,16 @@ public class Duelo {
 
     public static List<Wizard> magos = new ArrayList<Wizard>();
 
-    public static List<Wizard> listMago() {
+    public static List<Wizard> ListMago() {
 
-        Wizard mag = new Wizard();
-        mag.nombreDeMago = "Harry Potter";
-        mag.edad = 17;
-        magos.add(mag);
+        Wizard mago = new Wizard("Harry Potter", true, 100, 17);
+        magos.add(mago);
 
+        Wizard mago1 = new Wizard("Hermione Granger", true, 100, 17);
         mag = new Wizard();
         mag.nombreDeMago = "Hermione Granger";
         mag.edad = 17;
+        mag.magoOscuro = false;
         magos.add(mag);
 
         mag = new Wizard();

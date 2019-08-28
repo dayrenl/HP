@@ -13,20 +13,12 @@ import app.poder.Poder;
  */
 public class Elfo extends Criatura implements IHacerMagia {
 
+    public Elfo(String nombre, boolean estaVivo, int salud, int edad) {
+        super(nombre, estaVivo, salud, edad);
+    }
+
     public static List<Elfo> elfo = new ArrayList<>();
 
-    public String nombreDeElfo; // luego crear lista con nombre de los elfos
-
-    public Elfo(String nombreDeElfo) {
-        this.nombreDeElfo = nombreDeElfo;
-    }
-
-    public Elfo() {
-
-    }
-
-    
-  
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
