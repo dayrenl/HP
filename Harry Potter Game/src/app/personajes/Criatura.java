@@ -19,7 +19,7 @@ public class Criatura extends Personaje implements IEsMagico {
     }
 
     public Criatura(String nombre, boolean estaVivo, int salud, int edad) {
-        super(nombre, estaVivo, salud, edad);
+        super(nombre, estaVivo, salud, edad, estaVivo, edad);
     }
     
 }

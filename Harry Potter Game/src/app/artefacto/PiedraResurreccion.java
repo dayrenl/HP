@@ -21,7 +21,7 @@ public class PiedraResurreccion extends Artefacto implements IReliquiaDeLaMuerte
     public PiedraResurreccion(int amplificadorDanio, int amplificadorDeSalud) {
         this.poder = null;
         this.amplificadorDanio = 0;
-        this.amplificadorDeSalud = 1;
+        this.amplificadorDeSalud = 0;
     }
 
     public PiedraResurreccion(){

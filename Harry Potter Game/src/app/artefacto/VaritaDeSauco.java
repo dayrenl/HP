@@ -14,9 +14,11 @@ public class VaritaDeSauco extends Varita implements IReliquiaDeLaMuerte {
         return true;
     }
 
+
     public VaritaDeSauco(int amplificadorDanio, int amplificadorDeSalud) {
         super(amplificadorDanio, amplificadorDeSalud);
     }
+    
 
 
    

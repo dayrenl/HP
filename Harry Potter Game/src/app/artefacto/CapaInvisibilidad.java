@@ -17,6 +17,8 @@ public class CapaInvisibilidad extends Artefacto implements IReliquiaDeLaMuerte 
 
     }
 
+    
+
     @Override
     public boolean esInvisible() {
         return super.esInvisible();

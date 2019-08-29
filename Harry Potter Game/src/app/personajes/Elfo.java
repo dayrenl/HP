@@ -31,8 +31,8 @@ public class Elfo extends Criatura implements IHacerMagia {
     }
 
     @Override
-    public List<Artefacto> getArtefactos() {
-        return artefactos;
+    public Artefacto getArtefacto() {
+        return null;
     }
 
     @Override
@@ -42,7 +42,8 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     @Override
     public Poder setPoderInicial(Poder poderInicial) {
-        return null;
+        return poderInicial;
+    
     }
 
     @Override

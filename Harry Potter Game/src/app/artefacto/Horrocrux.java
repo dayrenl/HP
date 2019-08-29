@@ -18,7 +18,7 @@ public class Horrocrux extends Artefacto implements IReliquiaDeLaMuerte{
 
     public Horrocrux(int amplificadorDanio, int amplificadorDeSalud) {
         this.poder = null; //no es poder
-        this.amplificadorDeSalud = 1;
+        this.amplificadorDeSalud = 0;
         this.amplificadorDanio = 0;
     }
 
