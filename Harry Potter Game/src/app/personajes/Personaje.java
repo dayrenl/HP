@@ -1,8 +1,6 @@
 package app.personajes;
 
-import app.artefacto.Artefacto;
-import app.poder.Hechizo;
-import app.transporte.Transporte;
+
 
 /**
  * Personaje
@@ -21,9 +19,5 @@ public class Personaje {
         this.edad = edad;
     }
 
-    public Personaje(Hechizo h, Artefacto art, Transporte transporte){
-
-    }
-    
-    
+  
 }

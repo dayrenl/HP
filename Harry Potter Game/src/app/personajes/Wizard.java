@@ -2,62 +2,54 @@ package app.personajes;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import app.interfaces.IHacerMagia;
 import app.poder.Hechizo;
 import app.poder.Poder;
-import app.artefacto.Artefacto;
-import app.interfaces.IHacerMagia;
-import app.personajes.Personaje;
+import app.transporte.Escoba;
 
-public class Wizard extends Personaje implements IHacerMagia {
+public class Wizard<Artefacto> extends Personaje implements IHacerMagia {
 
     public Wizard(String nombre, boolean estaVivo, int salud, int edad) {
         super(nombre, estaVivo, salud, edad);
-
     }
 
-    
 
-	public List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public Escoba escoba;
+    public Poder poderInicial;
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
-	public Artefacto Artefacto;
+    public List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public boolean magoOscuro; //¿?
+    public int energiaMagica;
 
-    public static List<Wizard> magos = new ArrayList<Wizard>();
+    @Override
+    public void atacar(Personaje p, Hechizo hechizo) {
 
+    } //ENEMIGOS
+
+    @Override
+    public void atacar(Personaje p, String nombreHechizo) {
+
+    }
+
+    @Override
+    public List<app.artefacto.Artefacto> getArtefactos() {
+        return null;
+    }
+
+    @Override
+    public Poder getPoderInicial() {
+        return null;
+    }
+
+    @Override
+    public Poder setPoderInicial(Poder poderInicial) {
+        return null;
+    }
+
+    @Override
+    public void aprenderHechizo(Hechizo h) {
+
+    }
     
-
-    
-    @Override
-    public void atacar(Personaje enemigo, Hechizo hechizo) {
-
-    }
-
-    @Override
-    public void atacar(Personaje enemigo, String nombreHechizo) {
-
-    }
-
-    @Override
-    public Artefacto getArtefactos() {
-        return null;
-    }
-
-    @Override
-    public Poder getPoderInicial(Poder poder) {
-        return null;
-    }
-
-    @Override
-    public Poder setPoderInicial(Poder poder) {
-        return null;
-    }
-
-    @Override
-    public void aprenderHechizo(Hechizo hechizo) {
-
-    }
-
-	public List<Hechizo> add(Wizard mago) {
-		return null;
-	}
-
 }

@@ -14,12 +14,18 @@ public class PiedraResurreccion extends Artefacto implements IReliquiaDeLaMuerte
         return false;
     }
 
-    public PiedraResurreccion(int amplificadorDanio, int amplificadorDeSalud, String nombreArtefacto) {
+    /** public PiedraResurreccion(int amplificadorDanio, int amplificadorDeSalud, String nombreArtefacto) {
         super(amplificadorDanio, amplificadorDeSalud, nombreArtefacto);
+    } */
+
+    public PiedraResurreccion(int amplificadorDanio, int amplificadorDeSalud) {
+        this.poder = null;
+        this.amplificadorDanio = 0;
+        this.amplificadorDeSalud = 1;
     }
 
-    public PiedraResurreccion() {
-    }
+    public PiedraResurreccion(){
 
+    }
     
 }

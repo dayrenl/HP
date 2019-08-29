@@ -14,11 +14,16 @@ public class Horrocrux extends Artefacto implements IReliquiaDeLaMuerte{
         return false;
     }
 
-    public Horrocrux(int amplificadorDanio, int amplificadorDeSalud, String nombreArtefacto) {
-        super(amplificadorDanio, amplificadorDeSalud, nombreArtefacto);
+    
+
+    public Horrocrux(int amplificadorDanio, int amplificadorDeSalud) {
+        this.poder = null; //no es poder
+        this.amplificadorDeSalud = 1;
+        this.amplificadorDanio = 0;
     }
 
-    public Horrocrux() {
+    public Horrocrux(){
+
     }
 
 }

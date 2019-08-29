@@ -1,7 +1,7 @@
 package app.personajes;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 import app.artefacto.Artefacto;
 import app.interfaces.IHacerMagia;
@@ -17,35 +17,36 @@ public class Elfo extends Criatura implements IHacerMagia {
         super(nombre, estaVivo, salud, edad);
     }
 
-    public static List<Elfo> elfo = new ArrayList<>();
+    public List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public List<Artefacto> artefactos = new ArrayList<Artefacto>();
 
     @Override
-    public void atacar(Personaje enemigo, Hechizo hechizo) {
+    public void atacar(Personaje p, Hechizo hechizo) {
 
     }
 
     @Override
-    public void atacar(Personaje enemigo, String nombreHechizo) {
+    public void atacar(Personaje p, String nombreHechizo) {
 
     }
 
     @Override
-    public Artefacto getArtefactos() {
+    public List<Artefacto> getArtefactos() {
+        return artefactos;
+    }
+
+    @Override
+    public Poder getPoderInicial() {
         return null;
     }
 
     @Override
-    public Poder getPoderInicial(Poder poder) {
+    public Poder setPoderInicial(Poder poderInicial) {
         return null;
     }
 
     @Override
-    public Poder setPoderInicial(Poder poder) {
-        return null;
-    }
-
-    @Override
-    public void aprenderHechizo(Hechizo hechizo) {
+    public void aprenderHechizo(Hechizo h) {
 
     }
 

@@ -8,12 +8,12 @@ import java.util.List;
  */
 public class Muggle extends Persona {
 
+
     public Muggle(String nombre, boolean estaVivo, int salud, int edad) {
         super(nombre, estaVivo, salud, edad);
     }
 
     public boolean elementoMagico = false;
-    public String nombreMuggle;
 
    
 

@@ -25,12 +25,11 @@ public class Poder {
         this.nivelDanio = nivelDanio;
         this.nivelCuracion = nivelCuracion;
         this.nivelEnergia = nivelEnergia;
-    
+
     }
 
     public Poder() {
 
     }
 
-    
 }

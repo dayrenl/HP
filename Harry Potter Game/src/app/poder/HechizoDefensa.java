@@ -6,4 +6,6 @@ package app.poder;
 public class HechizoDefensa extends Hechizo{
 
     
+
+    
 }

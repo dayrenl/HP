@@ -5,5 +5,8 @@ package app.poder;
  */
 public class ParselTongue {
 
+    public ParselTongue() {
+
+    }
     
 }

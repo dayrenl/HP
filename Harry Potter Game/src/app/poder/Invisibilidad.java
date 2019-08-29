@@ -5,5 +5,9 @@ package app.poder;
  */
 public class Invisibilidad {
 
+    public Invisibilidad(){
+        
+    }
+
     
 }

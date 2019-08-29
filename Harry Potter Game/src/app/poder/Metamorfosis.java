@@ -5,5 +5,8 @@ package app.poder;
  */
 public class Metamorfosis {
 
-    
+    public Metamorfosis(){
+        
+    }
+
 }
