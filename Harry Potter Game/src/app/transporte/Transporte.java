@@ -3,10 +3,12 @@ package app.transporte;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.interfaces.IEsMagico;
+
 /**
  * Transporte
  */
-public class Transporte {
+public class Transporte implements IEsMagico {
 
     public int nroDeTransporte;
     public String nombreDeTransporte;
@@ -21,30 +23,15 @@ public class Transporte {
     public Transporte() {
 	}
 
-	public static void agregarTransporte(String nombreDeTransporte, int nroDeTransporte){
-        Transporte transp = new Transporte();
-        transp.nombreDeTransporte = "Escoba";
-        transp.nroDeTransporte = 1;
-
-        transporte.add(transp);
-
-        transp.nombreDeTransporte = "Tren Expreso de Hogwarts";
-        transp.nroDeTransporte = 2;
-
-        transporte.add(transp);
-
-        
-        
+    @Override
+    public boolean esInvisibleAMuggles() {
+        return false;
     }
-//RECORRE LOS TRANSPORTE PARA VER EL ADECUADO
-    public static Transporte selecTransporte(int nro)
-    {
-        for(Transporte transp: transporte)
-        {   if(transp.nroDeTransporte == nro)
-                return transp;
 
-        }
-        return null;
+    @Override
+    public boolean esInvisible() {
+        return false;
     }
+
 }
     

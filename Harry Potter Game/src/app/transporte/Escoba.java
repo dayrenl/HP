@@ -7,6 +7,7 @@ import app.interfaces.IEsMagico;
  */
 public class Escoba extends Transporte implements IEsMagico{
 
+    
     @Override
     public boolean esInvisibleAMuggles() {
         return false;
@@ -15,6 +16,13 @@ public class Escoba extends Transporte implements IEsMagico{
     @Override
     public boolean esInvisible() {
     return true; 
+    }
+
+    public Escoba(String nombreDeTransporte, int nroDeTransporte) {
+        super(nombreDeTransporte, nroDeTransporte);
+    }
+
+    public Escoba() {
     }
 
      

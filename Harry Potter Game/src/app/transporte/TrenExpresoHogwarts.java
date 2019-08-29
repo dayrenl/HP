@@ -17,5 +17,12 @@ public class TrenExpresoHogwarts extends Transporte implements IEsMagico {
         return false;
     }
 
+    public TrenExpresoHogwarts(String nombreDeTransporte, int nroDeTransporte) {
+        super(nombreDeTransporte, nroDeTransporte);
+    }
+
+    public TrenExpresoHogwarts() {
+    }
+
     
 }
