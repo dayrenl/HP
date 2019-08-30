@@ -54,8 +54,8 @@ public class Wizard extends Personaje implements IHacerMagia {
     }
 
     @Override
-    public Poder setPoderInicial(Poder poderInicial) {
-        return poderInicial;
+    public void setPoderInicial(Poder poderInicial) {
+        this.poderInicial = poderInicial;
 
     }
 

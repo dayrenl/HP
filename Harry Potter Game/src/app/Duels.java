@@ -35,64 +35,64 @@ public class Duels {
 
     public static List<Wizard> wizards = new ArrayList<Wizard>();
     
-    public void inicioDuelo() {
+    public static void inicioDuelo() {
         Duels.agregarPersonajes();
     }
 
     public static void agregarPersonajes() {
 
         Wizard mago = new Wizard("Harry Potter", true, 100, 17, false, 90);
-        Poder invisi = new Invisibilidad("Invisibilidad", 1, false, 50, 100, 80);
+        Invisibilidad invisi = new Invisibilidad("Invisibilidad", 1, false, 50, 100, 80);
         mago.setPoderInicial(invisi);
-        Artefacto resurrec = new PiedraResurreccion();
+        PiedraResurreccion resurrec = new PiedraResurreccion();
         resurrec.amplificadorDanio = 60;
         resurrec.amplificadorDeSalud = 100;
         mago.artefactos.add(resurrec);
         mago.getArtefacto();
-        Hechizo sectum = new Sectumsempra(true, 0, 100, 100);
+        Sectumsempra sectum = new Sectumsempra(true, 0, 100, 100);
         mago.aprenderHechizo(sectum);
-        Hechizo cave = new CaveInimicum(false, 50, 50, 70);
+        CaveInimicum cave = new CaveInimicum(false, 50, 50, 70);
         mago.aprenderHechizo(cave);
 
         Duels.personajes.add(mago);
 
         Wizard mago1 = new Wizard("Hermione Granger", true, 100, 17, false, 100);
-        Poder meta = new Metamorfosis("Metamorfosis", 2, false, 40, 100, 60);
+        Metamorfosis meta = new Metamorfosis("Metamorfosis", 2, false, 40, 100, 60);
         mago1.setPoderInicial(meta);
-        Artefacto capainvisi = new CapaInvisibilidad();
+        CapaInvisibilidad capainvisi = new CapaInvisibilidad();
         capainvisi.amplificadorDanio = 50;
         capainvisi.amplificadorDeSalud = 60;
         artefactos.add(capainvisi);
         mago.getArtefacto();
-        Hechizo vulnera = new VulneraSanentur(false, 100, 0, 40);
+        VulneraSanentur vulnera = new VulneraSanentur(false, 100, 0, 40);
         mago1.aprenderHechizo(vulnera);
-        Hechizo leviosa = new WingardiumLeviosa(false, 40, 60, 70);
+        WingardiumLeviosa leviosa = new WingardiumLeviosa(false, 40, 60, 70);
         mago1.aprenderHechizo(leviosa);
 
         Duels.personajes.add(mago1);
 
         Elfo elf = new Elfo("Dobby", true, 100, 100);
-        Poder parsel = new ParselTongue("Parsel Tongue", 3, true, 50, 70, 87);
+        ParselTongue parsel = new ParselTongue("Parsel Tongue", 3, true, 50, 70, 87);
         elf.setPoderInicial(parsel);
-        Artefacto varisauco = new VaritaDeSauco(100, 100);
+        VaritaDeSauco varisauco = new VaritaDeSauco(100, 100);
         artefactos.add(varisauco);
         mago.getArtefacto();
-        Hechizo crucio = new Crucio(true, 0, 100, 100);
+        Crucio crucio = new Crucio(true, 0, 100, 100);
         elf.aprenderHechizo(crucio);
-        Hechizo petri = new PetrificusTotalus(false, 10, 80, 70);
+        PetrificusTotalus petri = new PetrificusTotalus(false, 10, 80, 70);
         elf.aprenderHechizo(petri);
 
         Duels.personajes.add(elf);
 
         Elfo elf1 = new Elfo("Kreacher", true, 100, 120);
-        Poder meta1 = new Metamorfosis("Metamorfosis", 4, false, 40, 100, 54); //NIVEL ENERGIA DISMINUYE
+        Metamorfosis meta1 = new Metamorfosis("Metamorfosis", 4, false, 40, 100, 54); //NIVEL ENERGIA DISMINUYE
         elf1.setPoderInicial(meta1);
-        Artefacto horrocrux = new Horrocrux(100, 100);
+        Horrocrux horrocrux = new Horrocrux(100, 100);
         artefactos.add(horrocrux);
         elf1.getArtefacto();
-        Hechizo sectum1 = new Sectumsempra(true, 0, 100, 100);
+        Sectumsempra sectum1 = new Sectumsempra(true, 0, 100, 100);
         elf1.aprenderHechizo(sectum1);
-        Hechizo levi1 = new WingardiumLeviosa(false, 40, 20, 10);
+        WingardiumLeviosa levi1 = new WingardiumLeviosa(false, 40, 20, 10);
         elf1.aprenderHechizo(levi1);
 
         Duels.personajes.add(elf1);
@@ -105,6 +105,13 @@ public class Duels {
 
     }
 
+    public static Personaje getPersonaje(String nombre, boolean estaVivo, int salud, int edad, boolean magoOcuro, int energiaMagica) {
+        for (Personaje p : Duels.personajes) {
+            if (p.nombre.equals(nombre)) 
+                return p;
+        }
+        return null;
+    }
     
 
 }

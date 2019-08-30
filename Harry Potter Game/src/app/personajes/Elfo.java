@@ -19,6 +19,7 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
+    public Poder poderInicial;
 
     @Override
     public void atacar(Personaje p, Hechizo hechizo) {
@@ -41,8 +42,8 @@ public class Elfo extends Criatura implements IHacerMagia {
     }
 
     @Override
-    public Poder setPoderInicial(Poder poderInicial) {
-        return poderInicial;
+    public void setPoderInicial(Poder poderInicial) {
+        this.poderInicial = poderInicial;
     
     }
 
