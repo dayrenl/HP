@@ -49,7 +49,7 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     @Override
     public void aprenderHechizo(Hechizo h) {
-
+        hechizos.add(h);
     }
 
 }

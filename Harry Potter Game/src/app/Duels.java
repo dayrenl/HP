@@ -14,12 +14,10 @@ import app.personajes.Personaje;
 import app.personajes.Wizard;
 import app.poder.CaveInimicum;
 import app.poder.Crucio;
-import app.poder.Hechizo;
 import app.poder.Invisibilidad;
 import app.poder.Metamorfosis;
 import app.poder.ParselTongue;
 import app.poder.PetrificusTotalus;
-import app.poder.Poder;
 import app.poder.Sectumsempra;
 import app.poder.VulneraSanentur;
 import app.poder.WingardiumLeviosa;
@@ -41,17 +39,17 @@ public class Duels {
 
     public static void agregarPersonajes() {
 
-        Wizard mago = new Wizard("Harry Potter", true, 100, 17, false, 90);
-        Invisibilidad invisi = new Invisibilidad("Invisibilidad", 1, false, 50, 100, 80);
+        Wizard mago = new Wizard("Harry Potter", true, 100, 17, false, 100);
+        Invisibilidad invisi = new Invisibilidad("Invisibilidad", 1, false, 20, 10, 20);
         mago.setPoderInicial(invisi);
         PiedraResurreccion resurrec = new PiedraResurreccion();
-        resurrec.amplificadorDanio = 60;
-        resurrec.amplificadorDeSalud = 100;
+        resurrec.amplificadorDanio = 10;
+        resurrec.amplificadorDeSalud = 10;
         mago.artefactos.add(resurrec);
         mago.getArtefacto();
-        Sectumsempra sectum = new Sectumsempra(true, 0, 100, 100);
+        Sectumsempra sectum = new Sectumsempra(true, 0, 20, 20);
         mago.aprenderHechizo(sectum);
-        CaveInimicum cave = new CaveInimicum(false, 50, 50, 70);
+        CaveInimicum cave = new CaveInimicum(false,20, 15, 20);
         mago.aprenderHechizo(cave);
 
         Duels.personajes.add(mago);
@@ -68,6 +66,8 @@ public class Duels {
         mago1.aprenderHechizo(vulnera);
         WingardiumLeviosa leviosa = new WingardiumLeviosa(false, 40, 60, 70);
         mago1.aprenderHechizo(leviosa);
+        Crucio cruci = new Crucio(true, 0, 45, 100);
+        mago1.aprenderHechizo(cruci);
 
         Duels.personajes.add(mago1);
 

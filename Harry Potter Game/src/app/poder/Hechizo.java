@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Hechizzo
  */
-public class Hechizo {
+public class Hechizo extends Poder {
 
     public int nroDeHechizo;
     public String nombreDeHechizo;

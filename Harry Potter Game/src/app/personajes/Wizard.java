@@ -28,6 +28,7 @@ public class Wizard extends Personaje implements IHacerMagia {
     public Artefacto artefacto;
 
     public static List<Wizard> wizards = new ArrayList<Wizard>();
+    
 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
@@ -61,10 +62,12 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     @Override
     public void aprenderHechizo(Hechizo h) {
-
+        hechizos.add(h);
     }
 
-    
+   public Hechizo getHechizo() {
+       return null;
+   }
 	
 
 }
