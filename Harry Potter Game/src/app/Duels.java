@@ -33,6 +33,8 @@ public class Duels {
 
     public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
 
+    public static List<Wizard> wizards = new ArrayList<Wizard>();
+    
     public void inicioDuelo() {
         Duels.agregarPersonajes();
     }
@@ -45,7 +47,7 @@ public class Duels {
         Artefacto resurrec = new PiedraResurreccion();
         resurrec.amplificadorDanio = 60;
         resurrec.amplificadorDeSalud = 100;
-        artefactos.add(resurrec);
+        mago.artefactos.add(resurrec);
         mago.getArtefacto();
         Hechizo sectum = new Sectumsempra(true, 0, 100, 100);
         mago.aprenderHechizo(sectum);
@@ -69,7 +71,7 @@ public class Duels {
 
         Duels.personajes.add(mago1);
 
-        Elfo elf = new Elfo("Dobby", true, 70, 100);
+        Elfo elf = new Elfo("Dobby", true, 100, 100);
         Poder parsel = new ParselTongue("Parsel Tongue", 3, true, 50, 70, 87);
         elf.setPoderInicial(parsel);
         Artefacto varisauco = new VaritaDeSauco(100, 100);
@@ -82,7 +84,7 @@ public class Duels {
 
         Duels.personajes.add(elf);
 
-        Elfo elf1 = new Elfo("Kreacher", true, 60, 120);
+        Elfo elf1 = new Elfo("Kreacher", true, 100, 120);
         Poder meta1 = new Metamorfosis("Metamorfosis", 4, false, 40, 100, 54); //NIVEL ENERGIA DISMINUYE
         elf1.setPoderInicial(meta1);
         Artefacto horrocrux = new Horrocrux(100, 100);
@@ -95,12 +97,14 @@ public class Duels {
 
         Duels.personajes.add(elf1);
 
-        Muggle mugg = new Muggle("Dudley Dursley", true, 30, 17);
+        Muggle mugg = new Muggle("Dudley Dursley", true, 100, 17);
         Duels.personajes.add(mugg);
 
         Muggle mugg1 = new Muggle("Petunia Potter", true, 100, 17);
         Duels.personajes.add(mugg1);
 
     }
+
+    
 
 }
