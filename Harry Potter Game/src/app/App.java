@@ -7,6 +7,7 @@ import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
+import app.poderes.Invisibilidad;
 
 public class App {
 
@@ -19,49 +20,62 @@ public class App {
 
         Duels.inicioDuelo();
 
-        Personaje primerJugador = Duels.verPersonaje();
-        primerJugador = setJugador(primerJugador);
-        Personaje segundoJugador = Duels.verPersonaje();
-        //segundoJugador = setJugador2();
-
-    }
-/**while  para que elija una opcion despues un switch y un while de nuevo */
- 
-    
-    /** public static Personaje setJugador() {
-        System.out.println("ESTAS ELIGIENDO AL PRIMER JUGADOR\n");
-
         System.out.println("Ingresa el nombre del personaje que sera el primer jugador");
         Duels.listadoPersonajes();
         String perso1 = Teclado.nextLine();
-        Personaje primerJugador = Duels.verPersonaje(perso1); //metemos string?
+        Personaje primerJugador = Duels.verPersonaje(perso1); // metemos string?
+        System.out.println("El personaje que ha escogido es " + primerJugador.nombre);
 
-        if (primerJugador instanceof IHacerMagia){
+        if (primerJugador instanceof IHacerMagia) {
             IHacerMagia primerMago = (IHacerMagia) primerJugador;
-            System.out.println("Ingresa el nombre de los hechizos que quieras aprender! Presiona '666' para elegir Artefactos");
+            System.out.println("Ingresa el nombre de los hechizos que quieras aprender!");
+            System.out.println("Presiona '666' para elegir Artefactos");
             Duels.listadoHechizos();
             String hech = Teclado.nextLine();
+            Hechizo primerHechizo = Duels.verHechizo(hech);
+            System.out.println("El hechizo que ha escogido es " + primerHechizo.nombreDeHechizo);
 
-            while (hech != "666"){
-                Hechizo h = Duels.verHechizo(hech);
-                if (primerMago.getHechizo(h.nombreDeHechizo) == null); {
-                    primerMago.aprenderHechizo(h);
-                }
-            }
+            // Personaje primerJugador = Duels.verPersonaje();
+            // primerJugador = setJugador(primerJugador);
+            // Personaje segundoJugador = Duels.verPersonaje();
 
+            // segundoJugador = setJugador2();
 
-
-
-        
-
-
-    
+        }
     }
+}
 
+/** while para que elija una opcion despues un switch y un while de nuevo */
 
 /**
- * Personaje primerJugador = Duels.getPersonaje("Harry Potter", true, 100, 17,
- * false, 100); Personaje segundoJugador = Duels.getPersonaje("Hermione
+ * public static Personaje setJugador() { System.out.println("ESTAS ELIGIENDO AL
+ * PRIMER JUGADOR\n");
+ * 
+ * System.out.println("Ingresa el nombre del personaje que sera el primer
+ * jugador"); Duels.listadoPersonajes(); String perso1 = Teclado.nextLine();
+ * Personaje primerJugador = Duels.verPersonaje(perso1); //metemos string?
+ * 
+ * if (primerJugador instanceof IHacerMagia){ IHacerMagia primerMago =
+ * (IHacerMagia) primerJugador; System.out.println("Ingresa el nombre de los
+ * hechizos que quieras aprender! Presiona '666' para elegir Artefactos");
+ * Duels.listadoHechizos(); String hech = Teclado.nextLine();
+ * 
+ * while (hech != "666"){ Hechizo h = Duels.verHechizo(hech); if
+ * (primerMago.getHechizo(h.nombreDeHechizo) == null); {
+ * primerMago.aprenderHechizo(h); } }
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * }
+ * 
+ * 
+ * /** Personaje primerJugador = Duels.getPersonaje("Harry Potter", true, 100,
+ * 17, false, 100); Personaje segundoJugador = Duels.getPersonaje("Hermione
  * Granger", true, 100, 17, false, 100);
  * 
  * 
