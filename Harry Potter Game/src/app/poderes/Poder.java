@@ -1,4 +1,4 @@
-package app.poder;
+package app.poderes;
 
 import java.util.ArrayList;
 import java.util.List;

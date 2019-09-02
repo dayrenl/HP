@@ -1,10 +1,10 @@
 package app.interfaces;
 
-
-import app.artefacto.Artefacto;
+import app.artefactos.Artefacto;
+import app.hechizos.Hechizo;
 import app.personajes.Personaje;
-import app.poder.Hechizo;
-import app.poder.Poder;
+import app.poderes.Poder;
+
 
 public interface IHacerMagia {
 
@@ -19,5 +19,6 @@ public interface IHacerMagia {
     public void setPoderInicial(Poder poderInicial);
 
     public void aprenderHechizo(Hechizo h);
+
 
 }

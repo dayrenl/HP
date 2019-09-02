@@ -3,10 +3,10 @@ package app.personajes;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.artefacto.Artefacto;
+import app.artefactos.Artefacto;
+import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
-import app.poder.Hechizo;
-import app.poder.Poder;
+import app.poderes.Poder;
 import app.transporte.Escoba;
 
 public class Wizard extends Personaje implements IHacerMagia {
@@ -14,9 +14,12 @@ public class Wizard extends Personaje implements IHacerMagia {
    
 
 
-    public Wizard(String nombre, boolean estaVivo, int salud, int edad, boolean magoOscuro, int energiaMagica) {
-        super(nombre, estaVivo, salud, edad, magoOscuro, energiaMagica);
     
+
+    public Wizard(String nombre, boolean estaVivo, int salud, int edad) {
+        super(nombre, estaVivo, salud, edad);
+    
+
     }
 
     public Escoba escoba;
@@ -27,21 +30,30 @@ public class Wizard extends Personaje implements IHacerMagia {
     public int energiaMagica;
     public Artefacto artefacto;
 
+
+    
     public static List<Wizard> wizards = new ArrayList<Wizard>();
     
 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
+
+
     }
 
     @Override
     public void atacar(Personaje p, String nombreHechizo) {
+        
 
     }
 
-    @Override
-    public Artefacto getArtefacto() {
+    public Artefacto getArtefacto(String nombreDeArtefacto) {
+        for(Artefacto a : this.artefactos){
+            if(a.nombreDeArtefacto.equals(nombreDeArtefacto)){
+                return a;
+            }
+        }
         return null;
     }
     public Artefacto setArtefacto(Artefacto artefacto){
@@ -51,7 +63,7 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     @Override
     public Poder getPoderInicial() {
-        return null;
+        return poderInicial;
     }
 
     @Override
@@ -62,12 +74,24 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     @Override
     public void aprenderHechizo(Hechizo h) {
-        hechizos.add(h);
+        this.hechizos.add(h);
     }
 
-   public Hechizo getHechizo() {
-       return null;
-   }
+   public Hechizo getHechizo(String nombreDeHechizo) {
+       for(Hechizo h: this.hechizos){
+           if(h.nombreDeHechizo.equals(nombreDeHechizo)){
+               return h;
+           }
+       }
+    return null;
+}
+
+    @Override
+    public Artefacto getArtefacto() {
+        return null;
+    }
+
+    
 	
 
 }

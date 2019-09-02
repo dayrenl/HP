@@ -1,4 +1,4 @@
-package app.artefacto;
+package app.artefactos;
 
 import app.interfaces.IReliquiaDeLaMuerte;
 
@@ -7,17 +7,14 @@ import app.interfaces.IReliquiaDeLaMuerte;
  */
 public class CapaInvisibilidad extends Artefacto implements IReliquiaDeLaMuerte {
 
-    public CapaInvisibilidad(int amplificadorDeSalud, int amplificadorDanio) {
-        this.poder = null;
-        this.amplificadorDeSalud = 0;
-        this.amplificadorDanio = 0;
-    }
-
-    public CapaInvisibilidad() {
-
-    }
+  
+   
 
     
+
+    public CapaInvisibilidad(String nombreDeArtefacto, int amplificadorDanio, int amplificadorDeSalud) {
+        super(nombreDeArtefacto, amplificadorDanio, amplificadorDeSalud);
+    }
 
     @Override
     public boolean esInvisible() {
@@ -34,4 +31,5 @@ public class CapaInvisibilidad extends Artefacto implements IReliquiaDeLaMuerte 
         return true;
     }
 
+    
 }

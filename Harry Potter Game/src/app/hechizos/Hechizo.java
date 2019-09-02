@@ -1,14 +1,15 @@
-package app.poder;
-
+package app.hechizos;
 import java.util.ArrayList;
 import java.util.List;
+
+import app.poderes.Poder;
 
 /**
  * Hechizzo
  */
 public class Hechizo extends Poder {
 
-    public int nroDeHechizo;
+    
     public String nombreDeHechizo;
 
     public boolean esOscuro;
@@ -19,8 +20,7 @@ public class Hechizo extends Poder {
 
     public static List<Hechizo> hechizos = new ArrayList<>();
 
-    public Hechizo (int nroDeHechizo, String nombreDeHechizo, boolean esOscuro, int nivelDanio, int nivelCuracion, int nivelEnergia){
-        this.nroDeHechizo = nroDeHechizo;
+    public Hechizo (String nombreDeHechizo, boolean esOscuro, int nivelDanio, int nivelCuracion, int nivelEnergia){
         this.nombreDeHechizo = nombreDeHechizo;
         this.esOscuro = esOscuro;
         this.nivelDanio = nivelDanio;

@@ -1,4 +1,4 @@
-package app.artefacto;
+package app.artefactos;
 
 import app.interfaces.IReliquiaDeLaMuerte;
 
@@ -14,10 +14,16 @@ public class VaritaDeSauco extends Varita implements IReliquiaDeLaMuerte {
         return true;
     }
 
-
-    public VaritaDeSauco(int amplificadorDanio, int amplificadorDeSalud) {
-        super(amplificadorDanio, amplificadorDeSalud);
+    public VaritaDeSauco(String nombreDeArtefacto, int amplificadorDanio, int amplificadorDeSalud) {
+        super(nombreDeArtefacto, amplificadorDanio, amplificadorDeSalud);
     }
+
+    
+
+
+    
+
+    
     
 
 

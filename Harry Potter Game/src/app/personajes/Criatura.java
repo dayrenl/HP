@@ -8,6 +8,10 @@ import app.interfaces.IEsMagico;
 public class Criatura extends Personaje implements IEsMagico {
     
 
+    public Criatura(String nombre, boolean estaVivo, int salud, int edad) {
+        super(nombre, estaVivo, salud, edad);
+    }
+
     @Override
     public boolean esInvisible() {
         return false;
@@ -18,8 +22,6 @@ public class Criatura extends Personaje implements IEsMagico {
         return false;
     }
 
-    public Criatura(String nombre, boolean estaVivo, int salud, int edad) {
-        super(nombre, estaVivo, salud, edad, estaVivo, edad);
-    }
+    
     
 }

@@ -3,10 +3,11 @@ package app.personajes;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.artefacto.Artefacto;
+import app.artefactos.Artefacto;
+import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
-import app.poder.Hechizo;
-import app.poder.Poder;
+import app.poderes.Poder;
+
 
 /**
  * Elfo
