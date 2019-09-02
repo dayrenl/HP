@@ -11,14 +11,8 @@ import app.transporte.Escoba;
 
 public class Wizard extends Personaje implements IHacerMagia {
 
-   
-
-
-    
-
     public Wizard(String nombre, boolean estaVivo, int salud, int edad) {
         super(nombre, estaVivo, salud, edad);
-    
 
     }
 
@@ -26,37 +20,32 @@ public class Wizard extends Personaje implements IHacerMagia {
     public Poder poderInicial;
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
-    public boolean magoOscuro; //¿?
+    public static boolean magoOscuro;
     public int energiaMagica;
     public Artefacto artefacto;
 
-
-    
     public static List<Wizard> wizards = new ArrayList<Wizard>();
-    
 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
-
-
 
     }
 
     @Override
     public void atacar(Personaje p, String nombreHechizo) {
-        
 
     }
 
     public Artefacto getArtefacto(String nombreDeArtefacto) {
-        for(Artefacto a : this.artefactos){
-            if(a.nombreDeArtefacto.equals(nombreDeArtefacto)){
+        for (Artefacto a : this.artefactos) {
+            if (a.nombreDeArtefacto.equals(nombreDeArtefacto)) {
                 return a;
             }
         }
         return null;
     }
-    public Artefacto setArtefacto(Artefacto artefacto){
+
+    public Artefacto setArtefacto(Artefacto artefacto) {
         return artefacto;
 
     }
@@ -77,21 +66,17 @@ public class Wizard extends Personaje implements IHacerMagia {
         this.hechizos.add(h);
     }
 
-   public Hechizo getHechizo(String nombreDeHechizo) {
-       for(Hechizo h: this.hechizos){
-           if(h.nombreDeHechizo.equals(nombreDeHechizo)){
-               return h;
-           }
-       }
-    return null;
-}
+    public Hechizo getHechizo(String nombreDeHechizo) {
+        for (Hechizo h : this.hechizos) {
+            if (h.nombreDeHechizo.equals(nombreDeHechizo)) {
+                return h;
+            }
+        }
+        return null;
+    }
 
     @Override
     public Artefacto getArtefacto() {
         return null;
     }
-
-    
-	
-
 }
