@@ -16,7 +16,7 @@ public interface IHacerMagia {
     public Poder getPoderInicial();
     public void setPoderInicial(Poder poderInicial);
     public void aprenderHechizo(Hechizo h);
-
+    Hechizo getHechizo(String nombreDeHechizo);
 
 
 }

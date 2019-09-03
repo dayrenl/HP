@@ -35,11 +35,9 @@ import app.poderes.Poder;
 public class Duels {
 
     public static List<Personaje> personajes = new ArrayList<Personaje>();
-
     public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
 
-    public static List<Wizard> wizards = new ArrayList<Wizard>();
 
     public static void inicioDuelo() {
         Duels.agregarPersonajes();
@@ -140,13 +138,6 @@ public class Duels {
 
     }
 
-    public static Personaje verPersonaje(String nombre) {
-        for (Personaje per : Duels.personajes) {
-            if (per.nombre.equals(per.nombre))
-                return per;
-        }
-        return null;
-    }
 
     public static Artefacto verArtefacto(String nombreDeArtefacto){
 
@@ -176,7 +167,7 @@ public class Duels {
     public static void listadoArtefactos(){
         for (int i = 0; i < Duels.artefactos.size(); i++) {
             Artefacto art = Duels.artefactos.get(i);
-            System.out.println(art.nombreDeArtefacto);
+            System.out.println(Duels.artefactos.get(i));
         }
 
     }
@@ -184,7 +175,11 @@ public class Duels {
     public static void listadoHechizos(){
         for(int i = 0; i<Duels.hechizos.size(); i++) { 
             Hechizo hech = Duels.hechizos.get(i);
-            System.out.println(hech.nombreDeHechizo);
+            System.out.println(Duels.hechizos.get(i));
         }
     }
+
+	public static Personaje verPersonaje() {
+		return null;
+	}
 }

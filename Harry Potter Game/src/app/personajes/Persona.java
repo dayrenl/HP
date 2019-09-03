@@ -46,6 +46,11 @@ public class Persona extends Personaje implements IHacerMagia {
 
     }
 
+    @Override
+    public Hechizo getHechizo(String nombreDeHechizo) {
+        return null;
+    }
+
     
    
 
