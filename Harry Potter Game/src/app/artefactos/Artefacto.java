@@ -29,6 +29,10 @@ public class Artefacto implements IEsMagico {
         this.nombreDeArtefacto = nombreDeArtefacto;
     }
 
+    public Artefacto (){
+        
+    }
+
     public String getNombreDeArtefacto() {
         return nombreDeArtefacto;
     }
