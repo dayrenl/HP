@@ -7,11 +7,6 @@ import app.interfaces.IReliquiaDeLaMuerte;
  */
 public class CapaInvisibilidad extends Artefacto implements IReliquiaDeLaMuerte {
 
-  
-   
-
-    
-
     public CapaInvisibilidad(String nombreDeArtefacto, int amplificadorDanio, int amplificadorDeSalud) {
         super(nombreDeArtefacto, amplificadorDanio, amplificadorDeSalud);
     }

@@ -20,19 +20,113 @@ public class Wizard extends Personaje implements IHacerMagia {
     public Poder poderInicial;
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
-    public static boolean magoOscuro;
+    public boolean magoOscuro; // ¿?
     public int energiaMagica;
-    public Artefacto artefacto;
-
     public static List<Wizard> wizards = new ArrayList<Wizard>();
 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
+        int danioTotal;
+        int curacion = 0;
+        int curacionTotal;
+        int danio2 = 0;
+        int eneSalud = enemigo.salud;
+        int danioHechizo = hechizo.nivelDanio;
+        IHacerMagia magia; // CASTEAMOS LA MAGIA PARA QUE PUEDA OBTENER LOS OBJETOS Y AMPLIFICARLOS
+
+        if (this.energiaMagica >= hechizo.nivelEnergia) {
+
+            for (int i = 0; i < artefactos.size(); i++) {
+                danio2 = danio2 + (danioHechizo * this.artefactos.get(i).amplificadorDanio);
+            }
+
+            if (enemigo instanceof IHacerMagia) {
+                magia = (IHacerMagia) enemigo;
+                for (int i = 0; i < magia.getArtefacto().size(); i++) {
+                    curacion = curacion + (eneSalud * magia.getArtefacto().get(i).amplificadorDeSalud);
+                }
+            }
+
+            this.energiaMagica = this.energiaMagica - hechizo.nivelEnergia;
+            danioTotal = danioHechizo + danio2;
+
+            if (hechizo.esOscuro) {
+                this.magoOscuro = true;
+            }
+
+            if (this.magoOscuro) {
+                danio2 = danio2 * 2;
+            }
+
+            curacionTotal = eneSalud + curacion;
+            eneSalud = curacionTotal - danioTotal;
+
+            if (eneSalud >= 100) {
+                enemigo.estaVivo = true;
+                eneSalud = 100;
+            } else if (eneSalud < 1) {
+                enemigo.estaVivo = false;
+                eneSalud = 0;
+                System.out.println("BYE BYE " + enemigo.nombre + " sos fiambre ;)");
+            } else {
+                System.out.println("No tiene energia!");
+            }
+        }
+
     }
 
     @Override
-    public void atacar(Personaje p, String nombreHechizo) {
+    public void atacar(Personaje p, String nombreDeHechizo) {
+
+        Hechizo h = getHechizo(nombreDeHechizo);
+        int eneSalud = p.salud;
+        int danioHechizo = h.nivelDanio;
+        int danio2 = 0;
+        int curacion = 0;
+        int danioTotal;
+        int curacionTotal;
+
+        IHacerMagia magia;
+
+        if (this.energiaMagica >= h.nivelEnergia) {
+
+            for (int i = 0; i < artefactos.size(); i++) {
+                danio2 = danio2 + (danioHechizo * this.artefactos.get(i).amplificadorDanio);
+            }
+
+            if (p instanceof IHacerMagia) {
+                magia = (IHacerMagia) p;
+                for (int i = 0; i < magia.getArtefacto().size(); i++) {
+                    curacion = curacion + (eneSalud * magia.getArtefacto().get(i).amplificadorDeSalud);
+                }
+            }
+
+            this.energiaMagica = this.energiaMagica - h.nivelEnergia;
+            danioTotal = danioHechizo + danio2;
+
+            if (h.esOscuro) {
+                this.magoOscuro = true;
+            }
+
+            if (this.magoOscuro) {
+                danio2 = danio2 * 2;
+            }
+
+            curacionTotal = eneSalud + curacion;
+            eneSalud = curacionTotal - danioTotal; // p.salud?
+
+            if (eneSalud >= 100) {
+                p.estaVivo = true;
+                eneSalud = 100;
+            } else if (eneSalud < 1) {
+                p.estaVivo = false;
+                eneSalud = 0;
+                System.out.println("BYE BYE " + p.nombre + " sos fiambre ;)");
+            } else {
+                System.out.println("No tiene energia!");
+            }
+        }
 
     }
 
@@ -68,7 +162,7 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     public Hechizo getHechizo(String nombreDeHechizo) {
         for (Hechizo h : this.hechizos) {
-            if (h.nombreDeHechizo.equals(nombreDeHechizo)) {
+            if (h.nombreDeHechizo.equals(h.nombreDeHechizo)) {
                 return h;
             }
         }
@@ -76,7 +170,13 @@ public class Wizard extends Personaje implements IHacerMagia {
     }
 
     @Override
-    public Artefacto getArtefacto() {
+    public List<Artefacto> getArtefacto() {
         return null;
     }
+
+    public boolean esOscuro(Hechizo h) {
+        return magoOscuro;
+
+    }
+
 }
