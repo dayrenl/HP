@@ -8,7 +8,6 @@ import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
 import app.poderes.Poder;
 
-
 /**
  * Elfo
  */
@@ -25,15 +24,64 @@ public class Elfo extends Criatura implements IHacerMagia {
     @Override
     public void atacar(Personaje p, Hechizo hechizo) {
 
+        int eneSalud = p.salud;
+        int danio = hechizo.nivelDanio;
+        int curacion = 0;
+        int curacionTotal;
+
+        curacionTotal = eneSalud + curacion;
+
+        p.salud = curacionTotal - danio;
+
+        if (p.salud >= 100) {
+            p.estaVivo = true;
+            p.salud = 100;
+        } else if (p.salud < 1) {
+            p.estaVivo = false;
+            p.salud = 0;
+        } else {
+            System.out.println("No tiene energia!");
+        }
+
     }
 
     @Override
     public void atacar(Personaje p, String nombreHechizo) {
 
+        Hechizo h = getHechizo(nombreHechizo);
+        int eneSalud = p.salud;
+        int danio = h.nivelDanio;
+        int danio2 = 0;
+        int curacion = 0;
+
+        int danioTotal;
+
+        int curacionTotal;
+
+        danioTotal = danio + danio2;
+        curacionTotal = eneSalud + curacion;
+        p.salud = (int) (curacionTotal - danioTotal);
+
+        if (p.salud > 1 && p.salud < 100) {
+            p.salud = 100;
+            p.estaVivo = true;
+        }
+
+        if (p.salud < 1) {
+            p.estaVivo = false;
+            p.salud = 0;
+        } else {
+            System.out.println("No tiene energia!");
+        }
+
+    }
+
+    private Hechizo getHechizo(String nombreHechizo) {
+        return null;
     }
 
     @Override
-    public Artefacto getArtefacto() {
+    public List<Artefacto> getArtefacto() {
         return null;
     }
 
@@ -45,7 +93,7 @@ public class Elfo extends Criatura implements IHacerMagia {
     @Override
     public void setPoderInicial(Poder poderInicial) {
         this.poderInicial = poderInicial;
-    
+
     }
 
     @Override
