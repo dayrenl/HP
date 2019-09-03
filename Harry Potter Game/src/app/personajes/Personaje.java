@@ -1,10 +1,11 @@
 package app.personajes;
 
 
+
 /**
  * Personaje
  */
-public class Personaje {
+public  abstract class Personaje {
 
     public String nombre;
     public boolean estaVivo = true;
@@ -58,8 +59,6 @@ public class Personaje {
     public String toString() {
         return "Personaje [edad=" + edad + ", estaVivo=" + estaVivo + ", nombre=" + nombre + ", salud=" + salud + "]";
     }
-	
-	
 
     
 

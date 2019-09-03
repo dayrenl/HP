@@ -20,7 +20,7 @@ public class Wizard extends Personaje implements IHacerMagia {
     public Poder poderInicial;
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
-    public boolean magoOscuro; // ¿?
+    public static boolean magoOscuro;
     public int energiaMagica;
     public Artefacto artefacto;
 
@@ -28,87 +28,13 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
-        int eneSalud = enemigo.salud;
-        int danio = hechizo.nivelDanio;
-        int danioTotal;
-        int curacion = 0;
-        int curacionTotal;
-        int danio2 = 0;
-       
 
-        
-
-            this.energiaMagica = this.energiaMagica - hechizo.nivelEnergia;
-            danioTotal = danio + danio2;
-
-            if (hechizo.esOscuro) {
-                this.magoOscuro = true;
-            }
-
-            if (this.magoOscuro) {
-                danio2 = danio2 * 2;
-            }
-
-            curacionTotal = eneSalud + curacion;
-
-            enemigo.salud = curacionTotal - danioTotal;
-
-            if (enemigo.salud >= 100) {
-                enemigo.estaVivo = true;
-                enemigo.salud = 100;
-            } else if (enemigo.salud < 1) {
-                enemigo.estaVivo = false;
-                enemigo.salud = 0;
-            } else {
-                System.out.println("No tiene energia!");
-            }
-
-        }
-
-    
+    }
 
     @Override
     public void atacar(Personaje p, String nombreHechizo) {
 
-        Hechizo h = getHechizo(nombreHechizo);
-        int eneSalud = p.salud;
-        int danio = h.nivelDanio;
-        int danio2 = 0;
-        int curacion = 0;
-        int danioTotal;
-      
-        int curacionTotal;
-
-    
-
-            this.energiaMagica = this.energiaMagica - h.nivelEnergia;
-
-            danioTotal = danio + danio2;
-
-            if (h.esOscuro) {
-                this.magoOscuro = true;
-            }
-
-            if (this.magoOscuro) {
-                danioTotal = danioTotal * 2;
-            }
-
-            curacionTotal = eneSalud + curacion;
-
-            eneSalud = (int) curacionTotal - danioTotal;
-
-            if (eneSalud >= 1 && eneSalud <= 100) {
-                p.estaVivo = true;
-            }
-            if (eneSalud < 1) {
-                p.estaVivo = false;
-
-            } else {
-                System.out.println("No tiene energia!");
-            }
-        }
-
-    
+    }
 
     public Artefacto getArtefacto(String nombreDeArtefacto) {
         for (Artefacto a : this.artefactos) {
@@ -150,13 +76,7 @@ public class Wizard extends Personaje implements IHacerMagia {
     }
 
     @Override
-    public List<Artefacto> getArtefacto() {
+    public Artefacto getArtefacto() {
         return null;
     }
-
-    public boolean esOscuro(Hechizo h) {
-        return magoOscuro;
-
-    }
-
 }

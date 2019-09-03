@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Poder
  */
-public abstract class Poder {
+public class Poder {
     public String nombreDePoder;
     public int nroPoder;
 
