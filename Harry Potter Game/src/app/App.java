@@ -3,7 +3,6 @@ package app;
 
 import java.util.Scanner;
 
-import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
@@ -23,13 +22,12 @@ public class App {
 
         Personaje primerJugador = seleccPersonaje1();
         Personaje segundoJugador = seleccPersonaje2();
-        Hechizo h = elementoMagico(primerJugador);
-        Hechizo hechi = elementoMagico(segundoJugador);
+        
+
         juegoFull(primerJugador, segundoJugador);
 
     }
 
-    
     public static Personaje seleccPersonaje1() {
 
         System.out.println("\nIngresa el nombre del primer jugador!\n");
@@ -38,7 +36,6 @@ public class App {
         Personaje primerMago = Duels.verPersonaje(p1);
 
         elementoMagico(primerMago);
-        
 
         return primerMago;
     }
@@ -48,8 +45,8 @@ public class App {
         Duels.listadoPersonajes();
         String p2 = Teclado.nextLine();
         Personaje segundoMago = Duels.verPersonaje(p2);
+
         elementoMagico(segundoMago);
-        
 
         return segundoMago;
     }
@@ -57,61 +54,31 @@ public class App {
     public static Hechizo elementoMagico(Personaje perso) {
         if (perso instanceof IHacerMagia) {
             IHacerMagia magia = (IHacerMagia) perso;
+            System.out.println("¡TENES QUE ELEGIR 3 HECHIZOS!");
             System.out.println("\nIngresa el nombre del hechizo que queres obtener!\n");
-            System.out.println("\nPara elegir artefactos ingresa '666'\n");
+
             Duels.listadoHechizos();
             String hechizo = Teclado.nextLine();
-            Hechizo h = new Hechizo();
-            while (!hechizo.equals("666")) { // EL WHILE ES PARA QUE SI APRETAS 666 PASE
-                h = Duels.verHechizo(hechizo);
-                if (Duels.verHechizo(hechizo) != null) {
-                    if (magia.getHechizo(h.nombreDeHechizo) == null) {
-                        magia.aprenderHechizo(h);
-                    }
-                    System.out.println("\nIngresa el nombre del hechizo que queres obtener!\n");
-                    System.out.println("\nPara salir ingresa '666'\n");
+            Hechizo h = Duels.verHechizo(hechizo);
 
-                    Duels.listadoHechizos();
-                    hechizo = Teclado.nextLine();
-                    return h;
-                    
-                }
-
+            if (magia.getHechizo(h.nombreDeHechizo) != null) {
+                magia.aprenderHechizo(h);
             }
 
-           System.out.println("\nIngresa el nombre de los artefactos que queres obtener!\n");
-            System.out.println("\nPara salir ingresa '666'\n");
-            Duels.listadoArtefactos();
-            String art = Teclado.nextLine();
-            Artefacto a = new Artefacto();
-            while (!art.equals("666")) {
-                a = Duels.verArtefacto(art);
-                if (Duels.verArtefacto(art) != null) {
-                    if (magia.gArtefacto(a.nombreDeArtefacto) == null) {
-                        magia.getArtefacto(a);
-                    }
-                }
-                System.out.println("\nIngresa el nombre de los artefactos que queres obtener!\n");
-                System.out.println("\nPara salir ingresa '666'\n");
-
-                Duels.listadoArtefactos();
-                art = Teclado.nextLine();
-
-
-            }
+            return h;
 
         }
         return null;
-    
+
     }
-public static void juegoFull(Personaje primerJugador, Personaje segundoJugador) {
+
+    public static void juegoFull(Personaje primerJugador, Personaje segundoJugador) {
         IHacerMagia magia;
 
-        Hechizo h = elementoMagico(primerJugador);
-        Hechizo hechi = elementoMagico(segundoJugador);
-        
+        Hechizo h = new Hechizo();
+        Hechizo hechi = new Hechizo();
 
-        while (primerJugador.salud > 0 && segundoJugador.salud > 0 ) {
+        while (primerJugador.salud > 0 && segundoJugador.salud > 0) {
 
             magia = (IHacerMagia) primerJugador;
             if (primerJugador instanceof IHacerMagia) {
@@ -121,7 +88,7 @@ public static void juegoFull(Personaje primerJugador, Personaje segundoJugador) 
                 System.out.println(segundoJugador.nombre + " ataca a " + primerJugador.nombre);
                 magia.atacar(primerJugador, hechi);
                 System.out.println("La salud del primer jugador es " + primerJugador.salud);
-        
+
             }
 
         }
