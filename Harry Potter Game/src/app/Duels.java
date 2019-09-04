@@ -47,7 +47,7 @@ public class Duels {
 
     private static void agregarHechizos() {
 
-        Hechizo leviosa = new WingardiumLeviosa("Wingardium Leviosa", false, 0, 0, 10);
+        Hechizo leviosa = new WingardiumLeviosa("Wingardium Leviosa", false, 0, 0, 30);
         Duels.hechizos.add(leviosa);
 
         Hechizo cave = new CaveInimicum("Cave Inimicum", false, 30, 0, 50);
@@ -62,22 +62,22 @@ public class Duels {
         Hechizo petrificus = new PetrificusTotalus("Petrificus Totalus", false, 50, 0, 35);
         Duels.hechizos.add(petrificus);
 
-        Hechizo crucio = new Crucio("Crucio", true, 70, 0, 20);
+        Hechizo crucio = new Crucio("Crucio", true, 70, 0, 60);
         Duels.hechizos.add(crucio);
 
-        Hechizo aveda = new AvedaKedavra("Aveda Kedavra", true, 85, 0, 12);
+        Hechizo aveda = new AvedaKedavra("Aveda Kedavra", true, 85, 0, 70);
         Duels.hechizos.add(aveda);
 
-        Hechizo accio = new Accio("Accio", false, 50, 0, 30);
+        Hechizo accio = new Accio("Accio", false, 50, 0, 50);
         Duels.hechizos.add(accio);
 
         Hechizo protego = new ProtegoMaxima("Protego Maxima", false, 0, 70, 40);
         Duels.hechizos.add(protego);
 
-        Hechizo imperio = new Imperio("Imperio", true, 60, 20, 32);
+        Hechizo imperio = new Imperio("Imperio", true, 60, 20, 50);
         Duels.hechizos.add(imperio);
 
-        Hechizo ferula = new Ferula("Ferula", false, 40, 70, 20);
+        Hechizo ferula = new Ferula("Ferula", false, 40, 70, 30);
         Duels.hechizos.add(ferula);
 
     }
@@ -188,5 +188,7 @@ public class Duels {
 
 	public static Personaje verPersonaje() {
 		return null;
-	}
+    }
+    
+    
 }

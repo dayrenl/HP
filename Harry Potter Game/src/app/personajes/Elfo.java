@@ -24,33 +24,14 @@ public class Elfo extends Criatura implements IHacerMagia {
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
-        int danioTotal;
-        int curacion = 0;
-        int curacionTotal;
-        int danio2 = 0;
         int eneSalud = enemigo.salud;
-        int danioHechizo = hechizo.nivelDanio;
-        IHacerMagia magia; // CASTEAMOS LA MAGIA PARA QUE PUEDA OBTENER LOS OBJETOS Y AMPLIFICARLOS
+        enemigo.salud = enemigo.salud - 20;
+    
 
-        for (int i = 0; i < artefactos.size(); i++) {
-            danio2 = danio2 + (danioHechizo * this.artefactos.get(i).amplificadorDanio);
-        }
 
-        if (enemigo instanceof IHacerMagia) {
-            magia = (IHacerMagia) enemigo;
-            for (int i = 0; i < magia.getArtefacto().size(); i++) {
-                curacion = curacion + (eneSalud * magia.getArtefacto().get(i).amplificadorDeSalud);
-            }
-        }
 
-        danioTotal = danioHechizo + danio2;
-
-        curacionTotal = eneSalud + curacion;
-        eneSalud = curacionTotal - danioTotal;
-
-        if (eneSalud >= 100) {
+        if (eneSalud > 0) {
             enemigo.estaVivo = true;
-            eneSalud = 100;
         } else if (eneSalud < 1) {
             enemigo.estaVivo = false;
             eneSalud = 0;
@@ -109,7 +90,7 @@ public class Elfo extends Criatura implements IHacerMagia {
         int curacionTotal;
 
             for (int i = 0; i < artefactos.size(); i++) {
-                danio2 = danio2 + (danioHechizo * this.artefactos.get(i).amplificadorDanio);
+                danio2 = danio2 + (h.nivelDanio * this.artefactos.get(i).amplificadorDanio);
             }
 
             if (p instanceof IHacerMagia) {
@@ -119,7 +100,7 @@ public class Elfo extends Criatura implements IHacerMagia {
                 }
             }
 
-            danioTotal = danioHechizo + danio2;
+            danioTotal = h.nivelDanio + danio2;
            
 
             curacionTotal = eneSalud + curacion;
