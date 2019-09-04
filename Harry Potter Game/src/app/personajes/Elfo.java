@@ -140,4 +140,14 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     }
 
+    @Override
+    public void getArtefacto(Artefacto a) {
+
+    }
+
+    @Override
+    public Artefacto gArtefacto(String nombreDeArtefacto) {
+        return null;
+    }
+
 }

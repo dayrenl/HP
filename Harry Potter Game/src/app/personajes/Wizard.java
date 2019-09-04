@@ -179,4 +179,14 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     }
 
+    @Override
+    public void getArtefacto(Artefacto a) {
+
+    }
+
+    @Override
+    public Artefacto gArtefacto(String nombreDeArtefacto) {
+        return null;
+    }
+
 }

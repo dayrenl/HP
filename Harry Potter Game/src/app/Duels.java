@@ -138,20 +138,27 @@ public class Duels {
 
     }
 
+    public static Personaje verPersonaje(String nom){
+        for (Personaje p : Duels.personajes){
+            if (nom.equals(p.nombre))
+            return p;
+        }
+        return null;
+    }
 
-    public static Artefacto verArtefacto(String nombreDeArtefacto){
+    public static Artefacto verArtefacto(String nom){
 
         for (Artefacto art : Duels.artefactos) {
-            if (art.nombreDeArtefacto.equals(art.nombreDeArtefacto))
+            if (nom.equals(art.nombreDeArtefacto))
                 return art;
         }
         return null;
     }
 
-    public static Hechizo verHechizo(String nombreDeHechizo) {
+    public static Hechizo verHechizo(String nom) {
         
         for (Hechizo hech : Duels.hechizos) {
-            if (hech.nombreDeHechizo.equals(hech.nombreDeHechizo))
+            if (nom.equals(hech.nombreDeHechizo))
                 return hech;
         }
         return null;
@@ -166,16 +173,16 @@ public class Duels {
 
     public static void listadoArtefactos(){
         for (int i = 0; i < Duels.artefactos.size(); i++) {
-            Artefacto art = Duels.artefactos.get(i);
-            System.out.println(Duels.artefactos.get(i));
+            Artefacto a = Duels.artefactos.get(i);
+            System.out.println(a.nombreDeArtefacto);
         }
 
     }
 
     public static void listadoHechizos(){
         for(int i = 0; i<Duels.hechizos.size(); i++) { 
-            Hechizo hech = Duels.hechizos.get(i);
-            System.out.println(Duels.hechizos.get(i));
+            Hechizo h = Duels.hechizos.get(i);
+            System.out.println(h.nombreDeHechizo);
         }
     }
 
