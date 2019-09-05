@@ -26,35 +26,25 @@ public class Elfo extends Criatura implements IHacerMagia {
 
         int eneSalud = enemigo.salud;
         enemigo.salud = enemigo.salud - 20;
-    
-
-
 
         if (eneSalud > 0) {
             enemigo.estaVivo = true;
-        } else if (eneSalud < 1) {
+        } else if (eneSalud <= 1) {
             enemigo.estaVivo = false;
-            eneSalud = 0;
             System.out.println("BYE BYE " + enemigo.nombre + " sos fiambre ;)");
         } else {
             System.out.println("No tiene energia!");
         }
     }
 
-    
-
-    
-
-    
-        
-
     public Hechizo getHechizo(String nombreDeHechizo) {
         for (Hechizo h : this.hechizos) {
             if (h.nombreDeHechizo.equals(nombreDeHechizo)) {
-              return h;
+                return h;
             }
-          }
-          return null;    }
+        }
+        return null;
+    }
 
     @Override
     public List<Artefacto> getArtefacto() {
@@ -80,55 +70,19 @@ public class Elfo extends Criatura implements IHacerMagia {
     @Override
     public void atacar(Personaje p, String nombreDeHechizo) {
 
-        Hechizo h = getHechizo(nombreDeHechizo);
         int eneSalud = p.salud;
-        int danioHechizo = h.nivelDanio;
-        int danio2 = 0;
-        int curacion = 0;
-        int danioTotal;
-        IHacerMagia magia;
-        int curacionTotal;
 
-            for (int i = 0; i < artefactos.size(); i++) {
-                danio2 = danio2 + (h.nivelDanio * this.artefactos.get(i).amplificadorDanio);
-            }
-
-            if (p instanceof IHacerMagia) {
-                magia = (IHacerMagia) p;
-                for (int i = 0; i < magia.getArtefacto().size(); i++) {
-                    curacion = curacion + (magia.getArtefacto().get(i).amplificadorDeSalud);
-                }
-            }
-
-            danioTotal = h.nivelDanio + danio2;
-           
-
-            curacionTotal = eneSalud + curacion;
-
-            eneSalud =  curacionTotal - danioTotal;
-
-            if (eneSalud >= 100) {
-                p.estaVivo = true;
-                eneSalud = 100;
-            }
-            if (eneSalud < 1) {
-                p.estaVivo = false;
-                eneSalud = 0;
-                System.out.println("BYE BYE + " + p.nombre + "sos fiambre ;)");
-            } else {
-                System.out.println("No tiene energia!");
-            }
+        if (eneSalud >= 0) {
+            p.estaVivo = true;
+        }
+        if (eneSalud <= 1) {
+            p.estaVivo = false;
+            System.out.println("BYE BYE + " + p.nombre + "sos fiambre ;)");
+        } else {
+            System.out.println("No tiene energia!");
+        }
 
     }
 
-    @Override
-    public void getArtefacto(Artefacto a) {
-
-    }
-
-    @Override
-    public Artefacto gArtefacto(String nombreDeArtefacto) {
-        return null;
-    }
-
+    
 }

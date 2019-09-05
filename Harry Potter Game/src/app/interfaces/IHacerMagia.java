@@ -17,7 +17,5 @@ public interface IHacerMagia {
     public void setPoderInicial(Poder poderInicial);
     public void aprenderHechizo(Hechizo h);
     public Hechizo getHechizo(String nombreDeHechizo);
-    public void getArtefacto (Artefacto a);
-    public Artefacto gArtefacto (String nombreDeArtefacto);
 
 }

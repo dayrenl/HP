@@ -70,20 +70,7 @@ public class Wizard extends Personaje implements IHacerMagia {
         int danioTotal;
         int curacionTotal;
 
-        IHacerMagia magia;
 
-        if (this.energiaMagica >= h.nivelEnergia) {
-
-            for (int i = 0; i < artefactos.size(); i++) {
-                danio2 = danio2 + (danioHechizo * this.artefactos.get(i).amplificadorDanio);
-            }
-
-            if (p instanceof IHacerMagia) {
-                magia = (IHacerMagia) p;
-                for (int i = 0; i < magia.getArtefacto().size(); i++) {
-                    curacion = curacion + (eneSalud * magia.getArtefacto().get(i).amplificadorDeSalud);
-                }
-            }
 
             this.energiaMagica = this.energiaMagica - h.nivelEnergia;
             danioTotal = danioHechizo + danio2;
@@ -111,7 +98,7 @@ public class Wizard extends Personaje implements IHacerMagia {
             }
         }
 
-    }
+    
 
     public Artefacto getArtefacto(String nombreDeArtefacto) {
         for (Artefacto a : this.artefactos) {
@@ -162,14 +149,5 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     }
 
-    @Override
-    public void getArtefacto(Artefacto a) {
-
-    }
-
-    @Override
-    public Artefacto gArtefacto(String nombreDeArtefacto) {
-        return null;
-    }
-
+    
 }

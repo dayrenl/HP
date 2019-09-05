@@ -32,6 +32,7 @@ public class App {
     public static Personaje seleccPersonaje1() {
 
         System.out.println("\nIngresa el nombre del primer jugador!\n");
+        System.out.println("Por favor respeta las mayusculas y minusculas");
         Duels.listadoPersonajes();
         String p1 = Teclado.nextLine();
         Personaje primerMago = Duels.verPersonaje(p1);
@@ -44,6 +45,8 @@ public class App {
 
     public static Personaje seleccPersonaje2() {
         System.out.println("\nIngresa el nombre del segundo jugador!\n");
+        System.out.println("Por favor respeta las mayusculas y minusculas");
+
         Duels.listadoPersonajes();
         String p2 = Teclado.nextLine();
         Personaje segundoMago = Duels.verPersonaje(p2);
@@ -59,6 +62,8 @@ public class App {
             IHacerMagia magia = (IHacerMagia) perso;
             System.out.println("¡Elige tu hechizo!");
             System.out.println("\nIngresa el nombre del hechizo que queres obtener!\n");
+            System.out.println("Por favor respeta las mayusculas y minusculas");
+
 
             Duels.listadoHechizos();
             String hechizo = Teclado.nextLine();
@@ -80,13 +85,15 @@ public class App {
             IHacerMagia magia = (IHacerMagia) perso;
             System.out.println("Elige tu artefacto");
             System.out.println("\nIngresa el nombre del artefacto que queres obtener!\n");
+            System.out.println("Por favor respeta las mayusculas y minusculas");
+
 
             Duels.listadoArtefactos();
             String artefacto = Teclado.nextLine();
             Artefacto arte = Duels.verArtefacto(artefacto);
 
             if (magia.getArtefacto() != null) {
-                System.out.println("El artefacto escogido es " + arte);  ;
+                System.out.println("El artefacto escogido es " + arte); 
             }
 
             return arte;
@@ -122,27 +129,3 @@ public class App {
     }
 }
 
-/**
- * System.out.println("Ingresa el nombre del personaje que sera el primer
- * jugador"); System.out.println("Harry Potter");
- * System.out.println("Hermione"); System.out.println("Severus Snape");
- * System.out.println("Dobby"); System.out.println("Kreacher");
- * System.out.println("Dudley Dursley"); System.out.println("Petunia Potter");
- * String perso1 = Teclado.nextLine();
- * 
- * Personaje primerJugador = Duels.verPersonaje(perso1); System.out.println("\n
- * El personaje que ha escogido es " + perso1 + "\n");
- * 
- * if (primerJugador instanceof IHacerMagia) { IHacerMagia primerMago =
- * (IHacerMagia) primerJugador; System.out.println( "Ingresa el nombre de los
- * hechizos que quieras aprender! Presiona '666' para elegir Artefactos");
- * System.out.println("Presiona '666' para elegir Artefactos");
- * Duels.listadoHechizos(); String hech = Teclado.nextLine(); Hechizo
- * primerHechizo = Duels.verHechizo(hech); System.out.println("El hechizo que ha
- * escogido es " + hech);
- * 
- * }
- * 
- * } }
- * 
- */

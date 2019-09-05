@@ -51,15 +51,7 @@ public class Persona extends Personaje implements IHacerMagia {
         return null;
     }
 
-    @Override
-    public void getArtefacto(Artefacto a) {
-
-    }
-
-    @Override
-    public Artefacto gArtefacto(String nombreDeArtefacto) {
-        return null;
-    }
+    
 
     
    
