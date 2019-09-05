@@ -3,6 +3,7 @@ package app;
 
 import java.util.Scanner;
 
+import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
@@ -36,6 +37,7 @@ public class App {
         Personaje primerMago = Duels.verPersonaje(p1);
 
         elementoMagico(primerMago);
+        artefactoMagico(primerMago);
 
         return primerMago;
     }
@@ -47,6 +49,7 @@ public class App {
         Personaje segundoMago = Duels.verPersonaje(p2);
 
         elementoMagico(segundoMago);
+        artefactoMagico(segundoMago);
 
         return segundoMago;
     }
@@ -54,7 +57,7 @@ public class App {
     public static Hechizo elementoMagico(Personaje perso) {
         if (perso instanceof IHacerMagia) {
             IHacerMagia magia = (IHacerMagia) perso;
-            System.out.println("¡TENES QUE ELEGIR 3 HECHIZOS!");
+            System.out.println("¡Elige tu hechizo!");
             System.out.println("\nIngresa el nombre del hechizo que queres obtener!\n");
 
             Duels.listadoHechizos();
@@ -72,28 +75,51 @@ public class App {
 
     }
 
+    public static Artefacto artefactoMagico(Personaje perso) {
+        if (perso instanceof IHacerMagia) {
+            IHacerMagia magia = (IHacerMagia) perso;
+            System.out.println("Elige tu artefacto");
+            System.out.println("\nIngresa el nombre del artefacto que queres obtener!\n");
+
+            Duels.listadoArtefactos();
+            String artefacto = Teclado.nextLine();
+            Artefacto arte = Duels.verArtefacto(artefacto);
+
+            if (magia.getArtefacto() != null) {
+                System.out.println("El artefacto escogido es " + arte);  ;
+            }
+
+            return arte;
+
+        }
+        return null;
+
+    }
+
     public static void juegoFull(Personaje primerJugador, Personaje segundoJugador) {
         IHacerMagia magia;
 
         Hechizo h = new Hechizo();
         Hechizo hechi = new Hechizo();
+        
 
-        while (primerJugador.salud > 0 && segundoJugador.salud > 0) {
 
             magia = (IHacerMagia) primerJugador;
-            if (primerJugador instanceof IHacerMagia) {
+            while (primerJugador.salud > 0 && segundoJugador.salud > 0) {
+            if (primerJugador instanceof IHacerMagia && segundoJugador instanceof IHacerMagia) {
                 System.out.println(primerJugador.nombre + " ataca a " + segundoJugador.nombre);
                 magia.atacar(segundoJugador, h);
                 System.out.println("La salud del segundo jugador es: " + segundoJugador.salud);
                 System.out.println(segundoJugador.nombre + " ataca a " + primerJugador.nombre);
                 magia.atacar(primerJugador, hechi);
                 System.out.println("La salud del primer jugador es " + primerJugador.salud);
-
+        
+            } else {
+                System.out.println("Un jugado no tiene magia");
             }
 
         }
     }
-
 }
 
 /**

@@ -64,5 +64,4 @@ public class Artefacto implements IEsMagico {
     public void setAmplificadorDeSalud(int amplificadorDeSalud) {
         this.amplificadorDeSalud = amplificadorDeSalud;
     }
-//TO STRING ARTEFACTO?
 }
