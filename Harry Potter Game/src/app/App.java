@@ -32,7 +32,7 @@ public class App {
     public static Personaje seleccPersonaje1() {
 
         System.out.println("\nIngresa el nombre del primer jugador!\n");
-        System.out.println("Por favor respeta las mayusculas y minusculas");
+        System.out.println("\nPor favor respeta las mayusculas y minusculas\n");
         Duels.listadoPersonajes();
         String p1 = Teclado.nextLine();
         Personaje primerMago = Duels.verPersonaje(p1);
@@ -45,7 +45,7 @@ public class App {
 
     public static Personaje seleccPersonaje2() {
         System.out.println("\nIngresa el nombre del segundo jugador!\n");
-        System.out.println("Por favor respeta las mayusculas y minusculas");
+        System.out.println("\nPor favor respeta las mayusculas y minusculas\n");
 
         Duels.listadoPersonajes();
         String p2 = Teclado.nextLine();
@@ -62,7 +62,7 @@ public class App {
             IHacerMagia magia = (IHacerMagia) perso;
             System.out.println("¡Elige tu hechizo!");
             System.out.println("\nIngresa el nombre del hechizo que queres obtener!\n");
-            System.out.println("Por favor respeta las mayusculas y minusculas");
+            System.out.println("\nPor favor respeta las mayusculas y minusculas\n");
 
 
             Duels.listadoHechizos();
@@ -85,7 +85,7 @@ public class App {
             IHacerMagia magia = (IHacerMagia) perso;
             System.out.println("Elige tu artefacto");
             System.out.println("\nIngresa el nombre del artefacto que queres obtener!\n");
-            System.out.println("Por favor respeta las mayusculas y minusculas");
+            System.out.println("\nPor favor respeta las mayusculas y minusculas\n");
 
 
             Duels.listadoArtefactos();
