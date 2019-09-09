@@ -21,42 +21,54 @@ public class App {
 
         Duels.inicioDuelo();
 
-        Personaje primerJugador = seleccPersonaje1();
-        Personaje segundoJugador = seleccPersonaje2();
+        Personaje primerJugador = seleccPersonaje();
+        Personaje segundoJugador = seleccPersonaje();
         
 
-        juegoFull(primerJugador, segundoJugador);
+     
 
     }
 
-    public static Personaje seleccPersonaje1() {
+    public static Personaje seleccPersonaje() {
 
-        System.out.println("\nIngresa el nombre del primer jugador!\n");
-        System.out.println("\nPor favor respeta las mayusculas y minusculas\n");
+        System.out.println("\nIngresa el nombre de tu jugador!\n");
+        System.out.println("\nPor favor, respeta las mayusculas y minusculas\n");
         Duels.listadoPersonajes();
         String p1 = Teclado.nextLine();
-        Personaje primerMago = Duels.verPersonaje(p1);
+        Personaje mago = Duels.verPersonaje(p1);
 
-        elementoMagico(primerMago);
-        artefactoMagico(primerMago);
+        hechizoMagico(mago);
+        artefactoMagico(mago);
 
-        return primerMago;
+        return mago;
     }
 
-    public static Personaje seleccPersonaje2() {
-        System.out.println("\nIngresa el nombre del segundo jugador!\n");
-        System.out.println("\nPor favor respeta las mayusculas y minusculas\n");
+    public static Hechizo hechizoMagico(Personaje person) {
+        if (person instanceof IHacerMagia) {
+            System.out.println("Elige tu hechizo!");
+            System.out.println("\nIngresa el nombre del hechizo que deseas obtener\n");
+            System.out.println("Por favor, respeta las mayusculas y minusculas ");
 
-        Duels.listadoPersonajes();
-        String p2 = Teclado.nextLine();
-        Personaje segundoMago = Duels.verPersonaje(p2);
+            Duels.listadoHechizos();
+            String hechizo = Teclado.nextLine();
+            Hechizo h = Duels.verHechizo(hechizo);
 
-        elementoMagico(segundoMago);
-        artefactoMagico(segundoMago);
-
-        return segundoMago;
+            return h;
+        }
+        return null;
     }
 
+    public static Artefacto artefactoMagico (Personaje perso) {
+        System.out.println("\nElige tu artefacto! Ingresa el nombre del artefacto que quieras obtener\n"); 
+        
+        Duels.listadoArtefactos();
+        String artefacto = Teclado.nextLine();
+        Artefacto a = Duels.verArtefacto(artefacto);
+
+        return a; 
+    }
+   
+/**  /** 
     public static Hechizo elementoMagico(Personaje perso) {
         if (perso instanceof IHacerMagia) {
             IHacerMagia magia = (IHacerMagia) perso;
@@ -126,6 +138,6 @@ public class App {
             }
 
         }
-    }
+    } */ 
 }
 

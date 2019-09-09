@@ -49,34 +49,34 @@ public class Duels {
         Hechizo leviosa = new WingardiumLeviosa("Wingardium Leviosa", false, 0, 0, 30);
         Duels.hechizos.add(leviosa);
 
-        Hechizo cave = new CaveInimicum("Cave Inimicum", false, 30, 0, 50);
+        Hechizo cave = new CaveInimicum("Cave Inimicum", false, 20, 0, 50);
         Duels.hechizos.add(cave);
 
-        Hechizo vulnera = new VulneraSanentur("Vulnera Sanentur", false, 30, 100, 30);
+        Hechizo vulnera = new VulneraSanentur("Vulnera Sanentur", false, 20, 100, 30);
         Duels.hechizos.add(vulnera);
 
-        Hechizo sectum = new Sectumsempra("Sectum Sempra", true, 90, 0, 30);
+        Hechizo sectum = new Sectumsempra("Sectum Sempra", true, 20, 0, 30);
         Duels.hechizos.add(sectum);
 
-        Hechizo petrificus = new PetrificusTotalus("Petrificus Totalus", false, 50, 0, 35);
+        Hechizo petrificus = new PetrificusTotalus("Petrificus Totalus", false, 20, 0, 35);
         Duels.hechizos.add(petrificus);
 
-        Hechizo crucio = new Crucio("Crucio", true, 70, 0, 60);
+        Hechizo crucio = new Crucio("Crucio", true, 20, 0, 60);
         Duels.hechizos.add(crucio);
 
-        Hechizo aveda = new AvedaKedavra("Aveda Kedavra", true, 85, 0, 70);
+        Hechizo aveda = new AvedaKedavra("Aveda Kedavra", true, 20, 0, 70);
         Duels.hechizos.add(aveda);
 
-        Hechizo accio = new Accio("Accio", false, 50, 0, 50);
+        Hechizo accio = new Accio("Accio", false, 20, 0, 50);
         Duels.hechizos.add(accio);
 
-        Hechizo protego = new ProtegoMaxima("Protego Maxima", false, 0, 70, 40);
+        Hechizo protego = new ProtegoMaxima("Protego Maxima", false, 20, 70, 40);
         Duels.hechizos.add(protego);
 
-        Hechizo imperio = new Imperio("Imperio", true, 60, 20, 50);
+        Hechizo imperio = new Imperio("Imperio", true, 20, 20, 50);
         Duels.hechizos.add(imperio);
 
-        Hechizo ferula = new Ferula("Ferula", false, 40, 70, 30);
+        Hechizo ferula = new Ferula("Ferula", false, 20, 70, 30);
         Duels.hechizos.add(ferula);
 
     }

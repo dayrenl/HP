@@ -12,10 +12,9 @@ public interface IHacerMagia {
 
     public void atacar(Personaje enemigo, Hechizo hechizo);
     public void atacar(Personaje p, String nombreHechizo);
-    List <Artefacto> getArtefacto(); 
+    List <Artefacto> getArtefactos(); 
     public Poder getPoderInicial();
     public void setPoderInicial(Poder poderInicial);
     public void aprenderHechizo(Hechizo h);
-    public Hechizo getHechizo(String nombreDeHechizo);
 
 }

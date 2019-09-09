@@ -21,9 +21,9 @@ public class Wizard extends Personaje implements IHacerMagia {
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public boolean magoOscuro; // ¿?
-    public int energiaMagica;
+    public int energiaMagica = 100;
     public static List<Wizard> wizards = new ArrayList<Wizard>();
-
+/** 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
@@ -149,5 +149,67 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     }
 
+  */
+    @Override
+    public void atacar(Personaje enemigo, Hechizo hechizo) {
+       
+        
+        int eneSalud = enemigo.salud;
+        int danioHechizo = hechizo.nivelDanio;
+        int curacion = 10;
+
+
+            this.energiaMagica = this.energiaMagica - hechizo.nivelEnergia;
+            if (energiaMagica <= 10) {
+                System.out.println("No puedes atacar, no tienes energía!");
+            } else 
+            eneSalud = eneSalud - hechizo.nivelDanio;
+
+            if (hechizo.esOscuro) {
+                this.magoOscuro = true;
+                danioHechizo = danioHechizo * 2;
+            }
+
+
+
+            if (eneSalud >= 100) {
+                enemigo.estaVivo = true;
+                eneSalud = 100;
+            } else if (eneSalud < 1) {
+                enemigo.estaVivo = false;
+                eneSalud = 0;
+                System.out.println("Hasta la vista, " + enemigo.nombre + "has perdido!");
+            } 
+
     
+
+    }
+
+    @Override
+    public void atacar(Personaje p, String nombreHechizo) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public List<Artefacto> getArtefactos() {
+        return artefactos;
+    
+    }
+
+    @Override
+    public Poder getPoderInicial() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void setPoderInicial(Poder poderInicial) {
+        this.poderInicial = poderInicial;
+    }
+
+    @Override
+    public void aprenderHechizo(Hechizo h) {
+        this.hechizos.add(h);
+    }
 }

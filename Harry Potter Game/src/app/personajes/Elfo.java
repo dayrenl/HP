@@ -23,6 +23,47 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
+        
+        int eneSalud = enemigo.salud;
+
+        eneSalud = eneSalud - hechizo.nivelDanio;
+        
+
+    }
+
+    @Override
+    public void atacar(Personaje p, String nombreHechizo) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public List<Artefacto> getArtefactos() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Poder getPoderInicial() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void setPoderInicial(Poder poderInicial) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void aprenderHechizo(Hechizo h) {
+        hechizos.add(h);
+
+    }
+
+    /** 
+    @Override
+    public void atacar(Personaje enemigo, Hechizo hechizo) {
 
         int eneSalud = enemigo.salud;
         enemigo.salud = enemigo.salud - 20;
@@ -46,10 +87,6 @@ public class Elfo extends Criatura implements IHacerMagia {
         return null;
     }
 
-    @Override
-    public List<Artefacto> getArtefacto() {
-        return null;
-    }
 
     @Override
     public Poder getPoderInicial() {
@@ -82,7 +119,7 @@ public class Elfo extends Criatura implements IHacerMagia {
             System.out.println("No tiene energia!");
         }
 
-    }
+    } */
 
     
 }
