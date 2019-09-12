@@ -21,6 +21,8 @@ import app.hechizos.Sectumsempra;
 import app.hechizos.VulneraSanentur;
 import app.hechizos.WingardiumLeviosa;
 import app.personajes.Elfo;
+import app.personajes.Muggle;
+//import app.personajes.Elfo;
 import app.personajes.Personaje;
 import app.personajes.Wizard;
 import app.poderes.Invisibilidad;
@@ -129,10 +131,10 @@ public class Duels {
 
         Duels.personajes.add(kreacher);
 
-        Wizard ron = new Wizard("Dudley Dursley", true, 100, 17);
+        Muggle ron = new Muggle("Dudley Dursley", true, 100, 17);
         Duels.personajes.add(ron);
 
-        Wizard albus = new Wizard("Petunia Potter", true, 100, 50);
+        Muggle albus = new Muggle("Petunia Potter", true, 100, 50);
         Duels.personajes.add(albus);
 
     }
@@ -185,6 +187,22 @@ public class Duels {
         }
     }
 
+    
+    
+    public static Artefacto getArtefacto (String nombreDeArtefacto) {
+        return null;
+
+    }
+
+    public void getArtefacto (Artefacto a) {
+        
+    }
+
+	public static Hechizo getHechizo(String nombreDeHechizo) {
+		return null;
+	}
+
+	
 	
     
 }

@@ -87,6 +87,8 @@ public class Persona extends Personaje implements IHacerMagia {
     
 
     
+
+    
    
 
     

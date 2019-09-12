@@ -1,5 +1,6 @@
 package app.personajes;
 
+import app.hechizos.Hechizo;
 
 /**
  * Personaje
@@ -10,6 +11,8 @@ public class Personaje {
     public boolean estaVivo = true;
     public  int salud = 100;
     public int edad;
+    
+    
 	
 
     public Personaje(String nombre, boolean estaVivo, int salud, int edad) {
@@ -58,6 +61,13 @@ public class Personaje {
     public String toString() {
         return "Personaje [edad=" + edad + ", estaVivo=" + estaVivo + ", nombre=" + nombre + ", salud=" + salud + "]";
     }
+	public Hechizo getHechizo(String nombre) {
+        
+		return null;
+	}
+	public static Hechizo getHechizo(Hechizo h) {
+		return null;
+	}
 	
 	
 
