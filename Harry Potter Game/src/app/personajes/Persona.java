@@ -12,8 +12,8 @@ import app.poderes.Poder;
  */
 public class Persona extends Personaje implements IHacerMagia {
 
-    public Persona(String nombre, boolean estaVivo, int salud, int edad) {
-        super(nombre, estaVivo, salud, edad);
+    public Persona(String nombre, int salud, int edad) {
+        super(nombre, salud, edad);
     }
 /** 
     @Override

@@ -13,8 +13,8 @@ import app.poderes.Poder;
  */
 public class Elfo extends Criatura implements IHacerMagia {
 
-    public Elfo(String nombre, boolean estaVivo, int salud, int edad) {
-        super(nombre, estaVivo, salud, edad);
+    public Elfo(String nombre, int salud, int edad) {
+        super(nombre, salud, edad);
     }
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
@@ -27,19 +27,16 @@ public class Elfo extends Criatura implements IHacerMagia {
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
         int eneSalud = enemigo.salud;
-        int curacion = 10; // ¿?
 
-        if (this.estaVivo && enemigo.estaVivo) {
+        eneSalud = eneSalud - hechizo.nivelDanio;
 
-
-            if (energiaMagica <= 10) {
-                System.out.println("No puedes atacar, no tienes energía!");
-            } else
-                eneSalud = eneSalud - hechizo.nivelDanio;
+            if (energiaMagica > 0) {
+  
                 this.energiaMagica = this.energiaMagica - hechizo.nivelEnergia;
+            } else
+                System.out.println("No puedes atacar, no tienes energía!");
 
             if (eneSalud >= 100) {
-                enemigo.salud = 100;
                 enemigo.estaVivo = true;
             } else if (eneSalud < 1) {
                 enemigo.estaVivo = false;
@@ -52,40 +49,12 @@ public class Elfo extends Criatura implements IHacerMagia {
 
         }
 
-    }
+
 
     @Override
     public void atacar(Personaje p, String nombreHechizo) {
-        // TODO Auto-generated method stub
-
-        Hechizo hechi = getHechizo(nombreHechizo);
-        int eneSalud = p.salud;
-        int curacion = 10; // ¿?
-
-        if (this.estaVivo && p.estaVivo) {
-
-            this.energiaMagica = this.energiaMagica - hechi.nivelEnergia;
-
-            if (energiaMagica <= 10) {
-                System.out.println("No puedes atacar, no tienes energía!");
-            } else
-                eneSalud = eneSalud - hechi.nivelDanio;
-
-            if (eneSalud >= 100) {
-                p.salud = 100;
-                p.estaVivo = true;
-            } else if (eneSalud < 1) {
-                p.estaVivo = false;
-                p.salud = 0;
-                System.out.println("Hasta la vista, " + p.nombre + "has perdido!");
-
-            } else if (p.estaVivo) {
-                System.out.println(p.nombre + " tiene " + p.salud + " puntos de salud.");
-            }
-
         }
 
-    }
 
     @Override
     public List<Artefacto> getArtefactos() {

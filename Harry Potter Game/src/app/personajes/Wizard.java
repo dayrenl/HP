@@ -11,8 +11,8 @@ import app.transporte.Escoba;
 
 public class Wizard extends Personaje implements IHacerMagia {
 
-    public Wizard(String nombre, boolean estaVivo, int salud, int edad) {
-        super(nombre, estaVivo, salud, edad);
+    public Wizard(String nombre, int salud, int edad) {
+        super(nombre, salud, edad);
 
     }
 
@@ -104,24 +104,20 @@ public class Wizard extends Personaje implements IHacerMagia {
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
         int eneSalud = enemigo.salud;
-        int curacion = 10; //¿?
         int danioHechizo = hechizo.nivelDanio;
 
-        if (this.estaVivo && enemigo.estaVivo) {
+        eneSalud = eneSalud - hechizo.nivelDanio;
 
-
-            if (energiaMagica <= 10) {
-                System.out.println("No puedes atacar, no tienes energía!");
-            } else
-                eneSalud = eneSalud - hechizo.nivelDanio;
+            if (energiaMagica > 10) {
                 this.energiaMagica = this.energiaMagica - hechizo.nivelEnergia;
+            } else 
+            System.out.println("No puedes atacar mas, no tienes energia");
 
             if (hechizo.esOscuro) {
                 this.magoOscuro = true;
                 danioHechizo = danioHechizo * 2;
             }
-            if (eneSalud >= 100) {
-                enemigo.salud = 100;
+            if (eneSalud > 1) {
                 enemigo.estaVivo = true;
             } else if (eneSalud < 1) {
                 enemigo.estaVivo = false;
@@ -133,49 +129,16 @@ public class Wizard extends Personaje implements IHacerMagia {
             }
 
         }
-    }
 
     @Override
     public void atacar(Personaje p, String nombreHechizo) {
-        
-        Hechizo hechi = getHechizo(nombreHechizo);
-        int eneSalud = p.salud;
-        int curacion = 10; //¿?
-        int danio = 0;
-
-        if (this.estaVivo && p.estaVivo) {
-
-            this.energiaMagica = this.energiaMagica - hechi.nivelEnergia;
-
-            if (energiaMagica <= 10) {
-                System.out.println("No puedes atacar, no tienes energía!");
-            } else
-                eneSalud = eneSalud - hechi.nivelDanio;
-
-            if (hechi.esOscuro) {
-                this.magoOscuro = true;
-                danio = danio * 2;
-            }
-
-            if (eneSalud >= 100) {
-                p.salud = 100;
-                p.estaVivo = true;
-            } else if (eneSalud < 1) {
-                p.estaVivo = false;
-                p.salud = 0;
-                System.out.println("Hasta la vista, " + p.nombre + "has perdido!");
-
-            } else if (p.estaVivo) {
-                System.out.println(p.nombre + " tiene " + p.salud + " puntos de salud.");
-            }
-
         }
         
 
 
         
 
-    }
+    
     public Hechizo getHechizo(String nombre) {
 
         for (Hechizo h : this.hechizos) {

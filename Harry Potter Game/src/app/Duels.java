@@ -101,40 +101,40 @@ public class Duels {
 
     public static void agregarPersonajes() {
 
-        Wizard harry = new Wizard("Harry Potter", true, 100, 17);
+        Wizard harry = new Wizard("Harry Potter", 100, 17);
         Poder invisibilidad = new Invisibilidad("Invisibilidad", 1, false, 20, 10, 20);
         harry.setPoderInicial(invisibilidad);
 
         Duels.personajes.add(harry);
 
-        Wizard hermione = new Wizard("Hermione Granger", true, 100, 17);
+        Wizard hermione = new Wizard("Hermione Granger", 100, 17);
         Poder metamorfosis = new Metamorfosis("Metamorfosis", 2, false, 40, 100, 60);
         hermione.setPoderInicial(metamorfosis);
 
         Duels.personajes.add(hermione);
 
-        Wizard snape = new Wizard("Severus Snape", true, 100, 55);
+        Wizard snape = new Wizard("Severus Snape", 100, 55);
         Poder invisbilidad2 = new Invisibilidad("Invisibilidad", 3, false, 20, 10, 100);
         snape.setPoderInicial(invisbilidad2);
 
         Duels.personajes.add(snape);
 
-        Elfo dobby = new Elfo("Dobby", true, 100, 100);
+        Elfo dobby = new Elfo("Dobby", 100, 100);
         Poder parsel = new ParselTongue("Parsel Tongue", 3, true, 50, 70, 87);
         dobby.setPoderInicial(parsel);
 
         Duels.personajes.add(dobby);
 
-        Elfo kreacher = new Elfo("Kreacher", true, 100, 100);
+        Elfo kreacher = new Elfo("Kreacher", 100, 100);
         Metamorfosis metamorfosis2 = new Metamorfosis("Metamorfosis", 4, false, 40, 100, 54); // NIVEL ENERGIA DISMINUYE
         kreacher.setPoderInicial(metamorfosis2);
 
         Duels.personajes.add(kreacher);
 
-        Muggle ron = new Muggle("Dudley Dursley", true, 100, 17);
+        Muggle ron = new Muggle("Dudley Dursley", 100, 17);
         Duels.personajes.add(ron);
 
-        Muggle albus = new Muggle("Petunia Potter", true, 100, 50);
+        Muggle albus = new Muggle("Petunia Potter", 100, 50);
         Duels.personajes.add(albus);
 
     }

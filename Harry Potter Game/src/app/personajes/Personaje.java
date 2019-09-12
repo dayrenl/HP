@@ -15,9 +15,8 @@ public class Personaje {
     
 	
 
-    public Personaje(String nombre, boolean estaVivo, int salud, int edad) {
+    public Personaje(String nombre, int salud, int edad) {
         this.nombre = nombre;
-        this.estaVivo = estaVivo;
         this.salud = salud;
         this.edad = edad;
     }
