@@ -24,28 +24,24 @@ public class Elfo extends Criatura implements IHacerMagia {
     public int energiaMagica = 100;
 
     @Override
-    public void atacar(Personaje enemigo, Hechizo hechizo) {
+    public void atacar(Personaje enemigo, Hechizo h) {
 
-        int eneSalud = enemigo.salud;
-
-        eneSalud = eneSalud - hechizo.nivelDanio;
-
-            if (energiaMagica > 0) {
+    
+            if (this.energiaMagica > h.nivelEnergia) {
   
-                this.energiaMagica = this.energiaMagica - hechizo.nivelEnergia;
-            } else
+                this.energiaMagica -= h.nivelEnergia;
+                enemigo.salud -= h.nivelDanio;
+                } else
                 System.out.println("No puedes atacar, no tienes energía!");
 
-            if (eneSalud >= 100) {
+            if (enemigo.salud >= 100) {
                 enemigo.estaVivo = true;
-            } else if (eneSalud < 1) {
+            } else if (enemigo.salud < 1) {
                 enemigo.estaVivo = false;
                 enemigo.salud = 0;
-                System.out.println("Hasta la vista, " + enemigo.nombre + "has perdido!");
+                System.out.println("Hasta la vista, " + enemigo.nombre + " has perdido!");
 
-            } else if (enemigo.estaVivo) {
-                System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
-            }
+            } 
 
         }
 
@@ -58,7 +54,6 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     @Override
     public List<Artefacto> getArtefactos() {
-        // TODO Auto-generated method stub
         return null;
     }
 

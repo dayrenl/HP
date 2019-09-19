@@ -48,37 +48,37 @@ public class Duels {
 
     private static void agregarHechizos() {
 
-        Hechizo leviosa = new WingardiumLeviosa("Wingardium Leviosa", false, 0, 0, 30);
+        Hechizo leviosa = new WingardiumLeviosa("Wingardium Leviosa", false, 0, 0, 10);
         Duels.hechizos.add(leviosa);
 
-        Hechizo cave = new CaveInimicum("Cave Inimicum", false, 20, 0, 50);
+        Hechizo cave = new CaveInimicum("Cave Inimicum", false, 40, 40, 20);
         Duels.hechizos.add(cave);
 
-        Hechizo vulnera = new VulneraSanentur("Vulnera Sanentur", false, 20, 100, 30);
+        Hechizo vulnera = new VulneraSanentur("Vulnera Sanentur", false, 20, 100, 10);
         Duels.hechizos.add(vulnera);
 
-        Hechizo sectum = new Sectumsempra("Sectum Sempra", true, 20, 0, 30);
+        Hechizo sectum = new Sectumsempra("Sectum Sempra", true, 100, 0, 30);
         Duels.hechizos.add(sectum);
 
-        Hechizo petrificus = new PetrificusTotalus("Petrificus Totalus", false, 20, 0, 35);
+        Hechizo petrificus = new PetrificusTotalus("Petrificus Totalus", false, 30, 0, 10);
         Duels.hechizos.add(petrificus);
 
-        Hechizo crucio = new Crucio("Crucio", true, 20, 0, 60);
+        Hechizo crucio = new Crucio("Crucio", true, 50, 0, 20);
         Duels.hechizos.add(crucio);
 
-        Hechizo aveda = new AvedaKedavra("Aveda Kedavra", true, 20, 0, 70);
+        Hechizo aveda = new AvedaKedavra("Aveda Kedavra", true, 70, 0, 30);
         Duels.hechizos.add(aveda);
 
-        Hechizo accio = new Accio("Accio", false, 20, 0, 50);
+        Hechizo accio = new Accio("Accio", false, 50, 0, 20);
         Duels.hechizos.add(accio);
 
-        Hechizo protego = new ProtegoMaxima("Protego Maxima", false, 20, 70, 40);
+        Hechizo protego = new ProtegoMaxima("Protego Maxima", false, 50, 70, 20);
         Duels.hechizos.add(protego);
 
-        Hechizo imperio = new Imperio("Imperio", true, 20, 20, 50);
+        Hechizo imperio = new Imperio("Imperio", true, 30, 0, 10);
         Duels.hechizos.add(imperio);
 
-        Hechizo ferula = new Ferula("Ferula", false, 20, 70, 30);
+        Hechizo ferula = new Ferula("Ferula", false, 20, 0, 0);
         Duels.hechizos.add(ferula);
 
     }
@@ -187,22 +187,6 @@ public class Duels {
         }
     }
 
-    
-    
-    public static Artefacto getArtefacto (String nombreDeArtefacto) {
-        return null;
-
-    }
-
-    public void getArtefacto (Artefacto a) {
-        
-    }
-
-	public static Hechizo getHechizo(String nombreDeHechizo) {
-		return null;
-	}
-
-	
-	
+  
     
 }

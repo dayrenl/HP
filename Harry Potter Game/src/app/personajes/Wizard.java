@@ -2,15 +2,21 @@ package app.personajes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
+import app.Duels;
 import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
 import app.poderes.Poder;
 import app.transporte.Escoba;
 
+   
+
 public class Wizard extends Personaje implements IHacerMagia {
 
+    public static Scanner Teclado = new Scanner(System.in);
+    
     public Wizard(String nombre, int salud, int edad) {
         super(nombre, salud, edad);
 
@@ -101,32 +107,27 @@ public class Wizard extends Personaje implements IHacerMagia {
      * 
      */
     @Override
-    public void atacar(Personaje enemigo, Hechizo hechizo) {
+    public void atacar(Personaje enemigo, Hechizo h) {
 
-        int eneSalud = enemigo.salud;
-        int danioHechizo = hechizo.nivelDanio;
-
-        eneSalud = eneSalud - hechizo.nivelDanio;
-
-            if (energiaMagica > 10) {
-                this.energiaMagica = this.energiaMagica - hechizo.nivelEnergia;
+       
+            if (this.energiaMagica > h.nivelEnergia ) {
+                this.energiaMagica -=  h.nivelEnergia;
+                enemigo.salud -= h.nivelDanio;
             } else 
             System.out.println("No puedes atacar mas, no tienes energia");
 
-            if (hechizo.esOscuro) {
+            if (h.esOscuro) {
                 this.magoOscuro = true;
-                danioHechizo = danioHechizo * 2;
+                h.nivelDanio = h.nivelDanio * 2;
             }
-            if (eneSalud > 1) {
+            if (enemigo.salud > 1) {
                 enemigo.estaVivo = true;
-            } else if (eneSalud < 1) {
+            } else if (enemigo.salud < 1) {
                 enemigo.estaVivo = false;
                 enemigo.salud = 0;
-                System.out.println("Hasta la vista, " + enemigo.nombre + "has perdido!");
+                System.out.println("Hasta la vista, " + enemigo.nombre + " has perdido!");
 
-            } else if (enemigo.estaVivo) {
-                System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
-            }
+            } 
 
         }
 

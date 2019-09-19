@@ -3,13 +3,12 @@ package app;
 
 import java.util.Scanner;
 
+
 import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
-import app.personajes.Elfo;
-import app.personajes.Muggle;
 import app.personajes.Personaje;
-import app.personajes.Wizard;
+
 
 /**
  * App
@@ -150,32 +149,38 @@ public class App {
                 Hechizo h = Duels.verHechizo(hechizo);
 
                 if (Duels.verHechizo(hechizo) != null) {
-                    if (Duels.getHechizo(h.nombreDeHechizo) == null) {
+                    if (Duels.verHechizo(h.nombreDeHechizo) == null) {
                         mago.aprenderHechizo(h);
                         System.out.println("\n// Elegiste el hechizo: " + h.nombreDeHechizo + " //");
-                        mago.atacar(segundoJugador, h);
+                       
+                        
                     }
                 }
+                mago.atacar(segundoJugador, h);
+                System.out.println("La salud de " + segundoJugador.nombre + " es " + segundoJugador.salud);
+
             }
 
             if (segundoJugador instanceof IHacerMagia && segundoJugador.salud >= 1) {
 
-
                 System.out.println("\nElegi con que hechizo ataca " + segundoJugador.nombre + " ingresando su nombre");
                 System.out.println("Por favor, respeta las mayusculas y minusculas ");
-    
+
                 Duels.listadoHechizos();
                 String hech = Teclado.nextLine();
                 Hechizo he = Duels.verHechizo(hech);
-    
+
                 if (Duels.verHechizo(hech) != null) {
-                    if (Duels.getHechizo(he.nombreDeHechizo) == null) {
+                    if (Duels.verHechizo(he.nombreDeHechizo) == null) {
                         mago2.aprenderHechizo(he);
                         System.out.println("\n// Elegiste el hechizo: " + he.nombreDeHechizo + " //");
-                        mago2.atacar(primerJugador, he);
+                       
                     }
                 }
+                mago2.atacar(primerJugador, he);
+                System.out.println("La salud de " + primerJugador.nombre + " es " + primerJugador.salud);
             }
+            
         }
 
 
@@ -183,121 +188,4 @@ public class App {
     }
 }
 
-/**
- * public static void dueloMagico1(Personaje primerJugador) {
- * 
- * if (primerJugador instanceof IHacerMagia){
- * 
- * IHacerMagia mago = (IHacerMagia)primerJugador;
- * 
- * System.out.println("\nElegi con que hechizo ataca " + primerJugador.nombre +
- * " ingresando su nombre"); System.out.println("Por favor, respeta las
- * mayusculas y minusculas ");
- * 
- * Duels.listadoHechizos(); String hechizo = Teclado.nextLine(); Hechizo h =
- * Duels.verHechizo(hechizo);
- * 
- * if (Duels.verHechizo(hechizo) != null) { if
- * (Duels.getHechizo(h.nombreDeHechizo) == null) { mago.aprenderHechizo(h);
- * System.out.println("\n// Elegiste el hechizo: " + h.nombreDeHechizo + " //");
- * }
- * 
- * } }
- * 
- * 
- * }
- * 
- * public static void dueloMagico2(Personaje segundoJugador) {
- * 
- * 
- * if (segundoJugador instanceof IHacerMagia){
- * 
- * IHacerMagia mago = (IHacerMagia)segundoJugador; IHacerMagia mago2 =
- * (IHacerMagia)primerJugador;
- * 
- * System.out.println("\nElegi con que hechizo ataca " + segundoJugador.nombre +
- * " ingresando su nombre"); System.out.println("Por favor, respeta las
- * mayusculas y minusculas ");
- * 
- * Duels.listadoHechizos(); String hech = Teclado.nextLine(); Hechizo he =
- * Duels.verHechizo(hech);
- * 
- * if (Duels.verHechizo(hech) != null) { if
- * (Duels.getHechizo(he.nombreDeHechizo) == null) { mago.aprenderHechizo(he);
- * System.out.println("\n// Elegiste el hechizo: " + he.nombreDeHechizo + "
- * //"); mago.atacar(primerJugador, ) } } } } }
- * 
- * /** public static Hechizo hechizoMagico(Personaje jugador){
- * 
- * IHacerMagia mago = (IHacerMagia)jugador; String hechizo = Teclado.nextLine();
- * Hechizo h = Duels.verHechizo(hechizo);
- * 
- * if (Duels.verHechizo(hechizo) != null) { if
- * (Duels.getHechizo(h.nombreDeHechizo) == null) { mago.aprenderHechizo(h);
- * System.out.println("\n// Elegiste el hechizo: " + h.nombreDeHechizo + " //");
- * } } return h;
- * 
- * }
- * 
- * }
- */
-/**
- * public static Hechizo elementoMagico(Personaje perso) { if (perso instanceof
- * IHacerMagia) { IHacerMagia magia = (IHacerMagia) perso;
- * System.out.println("¡Elige tu hechizo!"); System.out.println("\nIngresa el
- * nombre del hechizo que queres obtener!\n"); System.out.println("\nPor favor
- * respeta las mayusculas y minusculas\n");
- * 
- * 
- * Duels.listadoHechizos(); String hechizo = Teclado.nextLine(); Hechizo h =
- * Duels.verHechizo(hechizo);
- * 
- * if (magia.getHechizo(h.nombreDeHechizo) != null) { magia.aprenderHechizo(h);
- * }
- * 
- * return h;
- * 
- * } return null;
- * 
- * }
- * 
- * public static Artefacto artefactoMagico(Personaje perso) { if (perso
- * instanceof IHacerMagia) { IHacerMagia magia = (IHacerMagia) perso;
- * System.out.println("Elige tu artefacto"); System.out.println("\nIngresa el
- * nombre del artefacto que queres obtener!\n"); System.out.println("\nPor favor
- * respeta las mayusculas y minusculas\n");
- * 
- * 
- * Duels.listadoArtefactos(); String artefacto = Teclado.nextLine(); Artefacto
- * arte = Duels.verArtefacto(artefacto);
- * 
- * if (magia.getArtefacto() != null) { System.out.println("El artefacto escogido
- * es " + arte); }
- * 
- * return arte;
- * 
- * } return null;
- * 
- * }
- * 
- * public static void juegoFull(Personaje primerJugador, Personaje
- * segundoJugador) { IHacerMagia magia;
- * 
- * Hechizo h = new Hechizo(); Hechizo hechi = new Hechizo();
- * 
- * 
- * 
- * magia = (IHacerMagia) primerJugador; while (primerJugador.salud > 0 &&
- * segundoJugador.salud > 0) { if (primerJugador instanceof IHacerMagia &&
- * segundoJugador instanceof IHacerMagia) {
- * System.out.println(primerJugador.nombre + " ataca a " +
- * segundoJugador.nombre); magia.atacar(segundoJugador, h);
- * System.out.println("La salud del segundo jugador es: " +
- * segundoJugador.salud); System.out.println(segundoJugador.nombre + " ataca a "
- * + primerJugador.nombre); magia.atacar(primerJugador, hechi);
- * System.out.println("La salud del primer jugador es " + primerJugador.salud);
- * 
- * } else { System.out.println("Un jugado no tiene magia"); }
- * 
- * } }
- */
+
