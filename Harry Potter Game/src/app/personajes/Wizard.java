@@ -3,8 +3,6 @@ package app.personajes;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import app.Duels;
 import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
@@ -113,6 +111,7 @@ public class Wizard extends Personaje implements IHacerMagia {
             if (this.energiaMagica > h.nivelEnergia ) {
                 this.energiaMagica -=  h.nivelEnergia;
                 enemigo.salud -= h.nivelDanio;
+                this.salud += h.nivelCuracion;
             } else 
             System.out.println("No puedes atacar mas, no tienes energia");
 

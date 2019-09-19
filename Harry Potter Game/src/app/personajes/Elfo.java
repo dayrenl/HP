@@ -31,6 +31,7 @@ public class Elfo extends Criatura implements IHacerMagia {
   
                 this.energiaMagica -= h.nivelEnergia;
                 enemigo.salud -= h.nivelDanio;
+                this.salud += h.nivelCuracion;
                 } else
                 System.out.println("No puedes atacar, no tienes energía!");
 

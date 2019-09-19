@@ -11,15 +11,6 @@ public class CapaInvisibilidad extends Artefacto implements IReliquiaDeLaMuerte 
         super(nombreDeArtefacto, amplificadorDanio, amplificadorDeSalud);
     }
 
-    @Override
-    public boolean esInvisible() {
-        return super.esInvisible();
-    }
-
-    @Override
-    public boolean esInvisibleAMuggles() {
-        return super.esInvisibleAMuggles();
-    }
 
     @Override
     public boolean esReliquiaMuerte() {

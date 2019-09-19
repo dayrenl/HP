@@ -20,7 +20,7 @@ public class Artefacto implements IEsMagico {
 
     @Override
     public boolean esInvisible() {
-        return true;
+        return false;
     }
 
     public Artefacto(String nombreDeArtefacto, int amplificadorDanio, int amplificadorDeSalud) {
