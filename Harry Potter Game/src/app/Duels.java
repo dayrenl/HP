@@ -54,7 +54,7 @@ public class Duels {
         Hechizo cave = new CaveInimicum("Cave Inimicum", false, 40, 0, 20);
         Duels.hechizos.add(cave);
 
-        Hechizo vulnera = new VulneraSanentur("Vulnera Sanentur", false, 0, 100, 10);
+        Hechizo vulnera = new VulneraSanentur("Vulnera Sanentur", false, 0, 40, 10);
         Duels.hechizos.add(vulnera);
 
         Hechizo sectum = new Sectumsempra("Sectum Sempra", true, 100, 0, 30);
