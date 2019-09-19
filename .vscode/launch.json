@@ -9,7 +9,9 @@
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}",
-            "console": "externalTerminal"
+            "console": "externalTerminal",
+            "stopOnEntry": false,
+
         },
         {
             "type": "java",
