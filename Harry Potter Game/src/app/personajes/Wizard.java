@@ -127,7 +127,12 @@ public class Wizard extends Personaje implements IHacerMagia {
                 System.out.println("Hasta la vista, " + enemigo.nombre + " has perdido!");
 
             } 
-
+            for (Artefacto artefacto : this.artefactos) {
+                if (artefacto.amplificadorDanio > 0 | artefacto.amplificadorDeSalud > 0) {
+                    this.salud += artefacto.amplificadorDeSalud;
+                    h.nivelDanio += artefacto.amplificadorDanio;
+                }
+            }
         }
 
     @Override

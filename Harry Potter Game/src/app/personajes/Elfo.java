@@ -44,7 +44,15 @@ public class Elfo extends Criatura implements IHacerMagia {
 
             } 
 
-        }
+            for (Artefacto artefacto : this.artefactos) {
+                if (artefacto.amplificadorDanio > 0 | artefacto.amplificadorDeSalud > 0) {
+                    this.salud += artefacto.amplificadorDeSalud;
+                    h.nivelDanio += artefacto.amplificadorDanio;
+                }
+            }
+
+
+    }
 
 
 
